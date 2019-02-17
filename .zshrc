@@ -101,5 +101,37 @@ source $ZSH/oh-my-zsh.sh
 # --hidden: Search hidden files and folders
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-export FZF_DEFAULT_COMMAND='rg --files --hidden --glob ".git/*"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
+export GOPATH=/usr/lib/go
 
+alias tmux='tmux -2'
+
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+
+# dotfiles paths
+export ZSHRC="$HOME/.zshrc"
+export VIMRC="$HOME/.vimrc"
+export VIM_COLOR="$HOME/.vim/colors/carbo.vim"
+export ZSH_COLOR="$HOME/.oh_my_zsh/theme/carbo2.zsh-theme"
+export I3_CONFIG="$HOME/.config/i3/config"
+export POLYBAR_CONFIG="$HOME/.config/polybar/config"
+export ROFI_CONFIG="$HOME/.config/rofi/config"
+export ROFI_COLOR="$HOME/.config/rofi/carbo.rasi"
+export COMPTON_CONFIG="$HOME/.config/compton.conf"
+export DUNST_CONFIG="$HOME/.config/dunst/dunstrc"
+export DOTFILES="$HOME/dotfiles"
+export EXA_COLORS="*.md=1;33:ga=37:gm=33:gd=33:gv=33:gt=33:uu=36:sb=33:sn=33:uw=36:gw=36:tw:36:ue=32:ux=32:gx=32:tx=32:ur=34:gr=34:tr=34:da=35"
+export TODO="$HOME/TODO"
+
+export PATH="$PATH:$HOME/bin"
+export PYTHONPATH="$PYTHONPATH:$HOME/lib/python"
+export SOCCER_CLI_API_TOKEN=5eb8bc4a2eaa4fd9bc7cfb7db78d621a
+export LESS="-RX"
+
+if [ -x "$(command -v neofetch)" ]
+then
+    neofetch --color_blocks off
+    colorpanes
+fi

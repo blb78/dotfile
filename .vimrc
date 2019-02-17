@@ -3,6 +3,7 @@
 " instructions:
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
+" call plug#begin('~/.vim/plugged')''
 " Devicon always load at first (parait il ...)
 Plug 'ryanoasis/vim-devicons'
 
@@ -95,7 +96,6 @@ inoremap { {}<Left>
 inoremap ' ''<Left>
 inoremap " ""<Left>
 
-
 " Allow vim to set a custom font or color for a word
 syntax enable
 
@@ -107,9 +107,6 @@ autocmd BufLeave * silent! :wa
 
 " Remove trailing white spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
-
-autocmd BufRead,BufNewFile *.vue setfiletype html
-au BufReadPost *.vue set syntax=html
 
 " Center the screen quickly
 nnoremap <space> zz
@@ -176,7 +173,6 @@ nnoremap <leader>q :close<cr>
 " Plugin: junegunn/fzf.vim
 "----------------------------------------------
 let g:fzf_layout = { 'down': '~100%' }
-nnoremap <leader>f :FZF<cr>
 nnoremap - :FZF<cr>
 
 
@@ -230,7 +226,6 @@ let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\	'*': ['remove_trailing_lines', 'trim_whitespace'],
 \	'javascript': ['prettier', 'eslint'],
 \	'typescript': ['prettier', 'eslint'],
 \	'vue': ['prettier', 'eslint'],
@@ -386,13 +381,3 @@ function! GotoJump()
 endfunction
 
 nmap <Leader>j :call GotoJump()<CR>
-map <Esc>[j :call GotoJump()<CR>
-
-"----------------------------------------------
-" Function: Golang search for func
-"----------------------------------------------
-function! GolangJump()
-	execute "normal /func /e+1\<CR>"
-endfunction
-
-nmap <Leader>f :call GolangJump()<CR>
