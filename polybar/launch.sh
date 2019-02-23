@@ -3,7 +3,7 @@
 #
 # Polybar launch program
 #
-# accent color for polybar is set in 
+# accent color for polybar is set in
 # * /etc/init.d/accent_color.sh
 # * /bin/accent (present in git repo dotfiles)
 #
@@ -21,3 +21,4 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch mainbar bar
 polybar mainbar-i3 &
+polybar bottom &

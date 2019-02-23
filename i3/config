@@ -124,7 +124,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 ""
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -242,6 +242,7 @@ exec_always --no-startup-id xset r rate 250 50
 
 # Set wallpaper
 exec_always --no-startup-id feh --bg-fill $HOME/Images/bender.jpg
+# exec_always --no-startup-id feh --bg-fill $HOME/Images/tron.png
 # Gradient wallpapers from uigradient.com
 #exec_always feh --bg-fill --randomize $HOME/Images/wallpapers/gradient/*
 
@@ -251,8 +252,9 @@ exec_always --no-startup-id feh --bg-fill $HOME/Images/bender.jpg
 exec_always --no-startup-id killall dunst
 exec_always --no-startup-id dunst &
 
-# Display top bar
+# Display bars
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 
 set $color  #FF9988
 set $rcolo  #FF0000
