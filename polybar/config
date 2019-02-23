@@ -789,7 +789,7 @@ type = internal/date
 interval = 5
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = " %A %d %B %Y"
+date = " %A %d %B"
 date-alt = " %a %b %d"
 time = %H:%M
 time-alt = %l:%M%p
@@ -1335,11 +1335,10 @@ label-disconnected-background = ${nord-theme.nord10}
 ;
 format-disconnected = <label-disconnected>
 format-disconnected-foreground = ${nord-theme.nord11}
-format-disconnected-background = ${colors.background}
+format-disconnected-background = ${nord-theme.nord10}
 format-disconnected-prefix = "  "
-format-disconnected-prefix-foreground = ${colors.alert}
-format-disconnected-prefix-background = ${colors.background}
-format-disconnected-underline =${colors.alert}
+format-disconnected-prefix-foreground = ${nord-theme.nord11}
+format-disconnected-prefix-background = ${nord-theme.nord10}
 ;
 ; ramp-signal-0 = ▁
 ; ramp-signal-1 = ▂
