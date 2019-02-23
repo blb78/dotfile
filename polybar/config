@@ -648,7 +648,7 @@ format-charging-background = ${nord-theme.nord10}
 format-charging-underline = ${nord-theme.nord10}
 
 format-discharging = <bar-capacity> <label-discharging>
-label-discharging = "  "
+label-discharging = "  "
 label-discharging-foreground =  ${nord-theme.nord10}
 format-discharging-underline = ${nord-theme.nord10}
 format-discharging-foreground = ${colors.background}
@@ -1235,14 +1235,15 @@ format-underline = #C15D3E
 type = internal/alsa
 interval = 5
 format-volume = "<label-volume><bar-volume>"
-label-volume = " SOUND "
+label-volume = "%{T2}  %{T-}"
 label-volume-background = ${colors.background}
 format-volume-suffix =
 format-volume-suffix-background =
 format-volume-foreground = ${nord-theme.nord8}
 
 format-muted= "<label-muted>"
-label-muted = " MUTED |"
+label-muted = "%{T2}  %{T-}"
+
 label-muted-background = ${colors.background}
 label-muted-foreground = ${nord-theme.nord11}
 
@@ -1329,11 +1330,11 @@ format-connected-prefix-foreground = ${colors.background}
 ; format-connected-underline = ${nord-theme.nord9}
 ;
 label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.alert}
-label-disconnected-background = ${colors.background}
+label-disconnected-foreground = ${nord-theme.nord11}
+label-disconnected-background = ${nord-theme.nord10}
 ;
 format-disconnected = <label-disconnected>
-format-disconnected-foreground = ${colors.alert}
+format-disconnected-foreground = ${nord-theme.nord11}
 format-disconnected-background = ${colors.background}
 format-disconnected-prefix = "  "
 format-disconnected-prefix-foreground = ${colors.alert}

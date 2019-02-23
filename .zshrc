@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
 export GOPATH=/usr/lib/go
 
-alias tmux='tmux -2'
+# alias tmux='tmux -2'
 
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
