@@ -130,8 +130,3 @@ export PYTHONPATH="$PYTHONPATH:$HOME/lib/python"
 export SOCCER_CLI_API_TOKEN=5eb8bc4a2eaa4fd9bc7cfb7db78d621a
 export LESS="-RX"
 
-if [ -x "$(command -v neofetch)" ]
-then
-    neofetch --color_blocks off
-    colorpanes
-fi
