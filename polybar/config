@@ -147,7 +147,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3
 modules-center =date
-modules-right =  arrow-end wireless-network arrow-8 arrow-10 poweroff
+modules-right =  arrow-end wireless-network arrow-8 arrow-9 volume  arrow-8 arrow-9 battery
 separator =
 
 ;dim-value = 1.0
@@ -187,37 +187,6 @@ double-click-right =
 ; - ns-resize : Up and down arrows, can be used to indicate scrolling
 cursor-click =
 cursor-scroll =
-
-################################################################################
-
-[bar/bottom]
-width = 100%
-height = 20
-;offset-x = 285
-offset-y = 0
-bottom = true
-
-line-size = 0
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-padding-left = 0
-padding-right = 0
-
-font-0 = "UbuntuMono Nerd Font:size=11;2"
-font-1 = "UbuntuMono Nerd Font:size=16;3"
-font-2 = Font Awesome 5 Brands:size=15;2
-font-3 = Font Awesome 5 Free:style=Regular:size=15;2
-font-4 = Font Awesome 5 Free:style=Solid:size=15;2
-font-5 = Font Awesome 5:size=15;3
-
-module-margin-left = 0
-module-margin-right = 0
-
-modules-left =  volume
-modules-center =
-modules-right = battery
 
 
 ################################################################################
@@ -346,112 +315,12 @@ format-background = ${colors.background}
 ############                       MODULES ARROWS                     ############
 ################################################################################
 ################################################################################
-
-[module/right1]
-type = custom/text
-content = ""
-content-foreground = ${nord-theme.nord8}
-content-background = ${colors.background}
-label-font = 1
-
-[module/left1]
-type = custom/text
-content = ""
-content-foreground = ${nord-theme.nord8}
-content-background = ${colors.background}
-
-[module/right2]
-type = custom/text
-content = ""
-content-foreground = ${nord-theme.nord8}
-content-background = ${colors.background}
-
-[module/left2]
-type = custom/text
-content = ""
-content-foreground = ${nord-theme.nord8}
-content-background = ${colors.background}
-
-[module/arrow1]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = #84598D
-content-background = #1D2330
-
-[module/arrow2]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = #4B5665
-content-background = #84598D
-
-[module/arrow3]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = #92969D
-content-background = #4B5665
-
-[module/arrow4]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = #645377
-content-background = #92969D
-
-[module/arrow5]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = #AD69AF
-content-background = #645377
-
-[module/arrow6]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = ${nord-theme.nord8}
-content-background = ${nord-theme.nord0}
-
-
-
-[module/arrow-memory]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = ${nord-theme.nord13}
-content-background = ${colors.background}
-
-[module/arrow-battery]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = ${nord-theme.nord10}
-content-background = ${colors.background}
-
-[module/arrow-date]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = ${nord-theme.nord8}
-content-background = ${nord-theme.nord10}
-
 [module/arrow-end]
 ; grey to Blue
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = ${nord-theme.nord8}
+content-foreground = ${nord-theme.nord9}
 content-background = ${colors.background}
 
 [module/arrow-8]
@@ -460,15 +329,15 @@ type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
 content-foreground = ${nord-theme.nord1}
-content-background = ${nord-theme.nord8}
+content-background = ${nord-theme.nord9}
 
 
-[module/arrow-10]
+[module/arrow-9]
 ; grey to Blue
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = ${nord-theme.nord10}
+content-foreground = ${nord-theme.nord9}
 content-background = ${nord-theme.nord1}
 
 
@@ -659,17 +528,17 @@ battery = BAT0
 adapter = AC0
 full-at = 100
 
-format-charging = <bar-capacity> <label-charging>
-label-charging =  "  %percentage%% "
-label-charging-foreground =  ${nord-theme.nord8}
+format-charging =  <label-charging>
+label-charging =  "  %percentage%% "
+label-charging-foreground =  ${nord-theme.nord6}
 format-charging-foreground = ${colors.background}
-format-charging-background = ${colors.background}
+format-charging-background = ${nord-theme.nord9}
 
-format-discharging = <bar-capacity> <label-discharging>
-label-discharging = "  %percentage%% "
-label-discharging-foreground =  ${nord-theme.nord8}
-format-discharging-foreground = ${nord-theme.nord8}
-format-discharging-background = ${colors.background}
+format-discharging = <label-discharging>
+label-discharging = "  %percentage%%  "
+label-discharging-foreground =  ${colors.background}
+format-discharging-foreground = ${colors.background}
+format-discharging-background = ${nord-theme.nord9}
 
 format-full-prefix = "  "
 format-full-prefix-foreground = ${nord-theme.nord14}
@@ -1123,12 +992,11 @@ format-foreground = #d7d7d7
 format-background = #645377
 
 ################################################################################
-[module/poweroff]
+[module/linux]
 type = custom/script
-exec = echo "  "
-click-left = systemctl poweroff
+exec = echo "  "
 format-foreground = ${colors.background}
-format-background = ${nord-theme.nord10}
+format-background = ${nord-theme.nord9}
 
 ################################################################################
 
@@ -1255,17 +1123,15 @@ format-underline = #C15D3E
 ;https://github.com/jaagr/polybar/wiki/Module:-volume
 type = internal/alsa
 interval = 5
-format-volume = "<label-volume><bar-volume>"
-label-volume = "%{T2}  %{T-}"
-label-volume-background = ${colors.background}
-format-volume-suffix =
-format-volume-suffix-background =
-format-volume-foreground = ${nord-theme.nord8}
+format-volume = "<label-volume>"
+label-volume = "%{T2}  %{T-}%percentage%%"
+label-volume-background = ${nord-theme.nord9}
+format-volume-foreground = ${colors.background}
 
 format-muted= "<label-muted>"
-label-muted = "%{T2}  %{T-}"
+label-muted = "%{T2}  %{T-}%percentage%%"
 
-label-muted-background = ${colors.background}
+label-muted-background = ${nord-theme.nord9}
 label-muted-foreground = ${nord-theme.nord11}
 
 bar-volume-width = 20
@@ -1339,24 +1205,23 @@ label-disconnected-foreground = ${colors.foreground}
 type = internal/network
 interface = wlp58s0
 interval = 3.0
-label-connected = %essid%
+label-connected = "%signal%%"
 
 ;format-connected = "<label-connected> "
 format-connected = " <label-connected> "
 format-connected-foreground= ${colors.background}
-format-connected-background= ${nord-theme.nord8}
+format-connected-background= ${nord-theme.nord9}
 format-connected-prefix = "  "
 format-connected-prefix-foreground = ${colors.background}
-format-connected-prefix-background = ${nord-theme.nord8}
-format-connected-underline = ${nord-theme.nord8}
+format-connected-prefix-background = ${nord-theme.nord9}
 ;
 label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${nord-theme.nord11}
-label-disconnected-background = ${nord-theme.nord8}
+label-disconnected-foreground = ${colors.foreground}
+label-disconnected-background = ${nord-theme.nord9}
 ;
 format-disconnected = <label-disconnected>
-format-disconnected-foreground = ${nord-theme.nord11}
-format-disconnected-background = ${nord-theme.nord8}
+format-disconnected-foreground = ${colors.foreground}
+format-disconnected-background = ${nord-theme.nord9}
 ; format-disconnected-prefix = "  "
 ; format-disconnected-prefix-foreground = ${nord-theme.nord11}
 ; format-disconnected-prefix-background = ${nord-theme.nord10}

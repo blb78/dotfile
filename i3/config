@@ -57,6 +57,7 @@ bindsym $mod+Shift+Q kill
 bindsym $mod+space exec rofi -show drun -show-icons -icon-theme
 
 bindsym Mod1+Tab exec rofi -show combi -show-icons -icon-theme
+bindsym $mod+p exec ~/.config/rofi/SYSTEM
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -201,8 +202,8 @@ new_window	pixel 5
 new_float	pixel 5
 
 # Snapshots bindings
-bindsym $mod+p          exec screen
-bindsym $mod+Shift+p    exec screens
+# bindsym $mod+p          exec screen
+# bindsym $mod+Shift+p    exec screens
 
 bindsym $mod+n          exec notify Notification
 bindsym $mod+Shift+n    exec notify -u low Notification
@@ -229,6 +230,7 @@ bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer
 # Hide borders when only one window on screen
 hide_edge_borders smart
 
+bindsym --release Print exec "scrot -m '/home/blb/Images/%s_%H%M_%d.%m.%Y_$wx$h.png'"
 
 ##########################################################
 #                       STARTUP                          #
@@ -241,11 +243,11 @@ exec_always --no-startup-id xrandr -s 1920x1080
 exec_always --no-startup-id xset r rate 250 50
 
 # Set wallpaper
-exec_always --no-startup-id feh --bg-fill $HOME/Images/anatomy.jpg
-# exec_always --no-startup-id feh --bg-fill $HOME/Images/lego.jpg
-# exec_always --no-startup-id feh --bg-fill $HOME/Images/tron.png
-# Gradient wallpapers from uigradient.com
-#exec_always feh --bg-fill --randomize $HOME/Images/wallpapers/gradient/*
+# exec_always --no-startup-id feh --bg-fill $HOME/Images/anatomy.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Images/lego.jpg
+
+# set lockscreen background as wallpaper
+# exec --no-startup-id betterlockscreen -w
 
 # Start compton compositor (for transparent)
 #exec_always --no-startup-id compton -f -D 2 &

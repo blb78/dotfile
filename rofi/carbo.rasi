@@ -6,7 +6,6 @@ configuration {
   display-drun: "Run ";
   display-window: "Switch";
   display-windowcd: "Switch";
-  display-calc: "Calc";
 }
 * {
     accent: #5E81AC;

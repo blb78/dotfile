@@ -1,7 +1,7 @@
 rofi.show: drun
 rofi.combi-modi:    window,drun
 rofi.modi: window,ssh,run,drun,combi
-rofi.theme: .config/rofi/themes/carbo.rasi
+rofi.theme: ~/.config/rofi/carbo.rasi
 rofi.fullscreen:true
 rofi.terminal:alacritty
 rofi.font: Pango Monospace 12
