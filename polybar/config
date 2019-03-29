@@ -147,8 +147,8 @@ font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3
 modules-center =date
-modules-right =  arrow-end wireless-network arrow-8 arrow-9 volume  arrow-8 arrow-9 battery
-separator =
+modules-right = xbacklight alsa battery
+separator = " "
 
 ;dim-value = 1.0
 
@@ -340,8 +340,6 @@ content-font = 2
 content-foreground = ${nord-theme.nord9}
 content-background = ${nord-theme.nord1}
 
-
-
 ################################################################################
 ###############################################################################
 ############                       MODULES A-Z                      ############
@@ -351,104 +349,16 @@ content-background = ${nord-theme.nord1}
 [module/alsa]
 type = internal/alsa
 
-; Soundcard to be used
-; Usually in the format hw:# where # is the card number
-; You can find the different card numbers in `/proc/asound/cards`
-;;master-soundcard = default
-;;speaker-soundcard = default
-;;headphone-soundcard = default
+format-volume = <label-volume>
+label-volume = "  %percentage%%"
+label-volume-foreground = ${nord-theme.nord8}
+label-volume-background = ${colors.background}
 
-; Name of the master, speaker and headphone mixers
-; Use the following command to list available mixer controls:
-; $ amixer scontrols | sed -nr "s/.*'([[:alnum:]]+)'.*/\1/p"
-; If master, speaker or headphone-soundcard isn't the default,
-; use `amixer -c # scontrols` instead where # is the number
-; of the master, speaker or headphone soundcard respectively
-;
-; Default: Master
-;;master-mixer = Master
+format-muted-foreground = ${nord-theme.nord11}
+format-muted-background = ${colors.background}
+label-muted = "  0%"
 
-; Optionally define speaker and headphone mixers
-; Default: none
-;;speaker-mixer = Speaker
-; Default: none
-;;headphone-mixer = Headphone
-
-; NOTE: This is required if headphone_mixer is defined
-; Use the following command to list available device controls
-; $ amixer controls | sed -r "/CARD/\!d; s/.*=([0-9]+).*name='([^']+)'.*/printf '%3.0f: %s\n' '\1' '\2'/e" | sort
-; You may also need to use `amixer -c # controls` as above for the mixer names
-; Default: none
-;;headphone-id = 9
-
-; Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
-; Default: false
-;;mapped = true
-
-; Interval for volume increase/decrease (in percent points)
-; Default: 5
-;;interval = 5
-
-; Available tags:
-;   <label-volume> (default)
-;   <ramp-volume>
-;   <bar-volume>
-format-volume = <ramp-volume> <bar-volume>
-
-; Available tags:
-;   <label-muted> (default)
-;   <ramp-volume>
-;   <bar-volume>
-format-muted = <label-muted>
-
-; Available tokens:
-;   %percentage% (default)
-label-volume = %percentage%%
-
-; Available tokens:
-;   %percentage% (default
-format-muted-prefix = 
-label-muted = " Muted"
-label-muted-foreground = ${nord-theme.nord11}
-
-; Only applies if <ramp-volume> is used
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-3 = 
-ramp-volume-4 = 
-
-; Only applies if <bar-volume> is used
-bar-volume-width = 10
-bar-volume-gradient = false
-
-bar-volume-indicator = |
-bar-volume-indicator-foreground = ${nord-theme.nord11}
-bar-volume-indicator-font = 2
-
-bar-volume-fill = ━
-bar-volume-foreground-0 = ${nord-theme.nord8}
-bar-volume-foreground-1 = ${nord-theme.nord8}
-bar-volume-foreground-2 = ${nord-theme.nord8}
-bar-volume-foreground-3 = ${nord-theme.nord8}
-bar-volume-foreground-4 = ${nord-theme.nord9}
-bar-volume-foreground-5 = ${nord-theme.nord9}
-bar-volume-foreground-6 = ${nord-theme.nord9}
-bar-volume-foreground-7 = ${nord-theme.nord10}
-bar-volume-foreground-8 = ${nord-theme.nord10}
-bar-volume-fill-font = 2
-
-bar-volume-empty = ┉
-bar-volume-empty-foreground = ${nord-theme.nord11}
-bar-volume-empty-font = 2
-
-; If defined, it will replace <ramp-volume> when
-; headphones are plugged in to `headphone_control_numid`
-; If undefined, <ramp-volume> will be used for both
-; Only applies if <ramp-volume> is used
-ramp-headphones-0 = 
-ramp-headphones-1 = 
-
+###############################################################################
 
 [module/arch-aur-updates]
 type = custom/script
@@ -498,7 +408,7 @@ card = intel_backlight
 ;   <label> (default)
 ;   <ramp>
 ;   <bar>
-format = <label>
+format = <ramp> <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
@@ -530,15 +440,15 @@ full-at = 100
 
 format-charging =  <label-charging>
 label-charging =  "  %percentage%% "
-label-charging-foreground =  ${nord-theme.nord6}
-format-charging-foreground = ${colors.background}
-format-charging-background = ${nord-theme.nord9}
+label-charging-foreground =  ${colors.foreground}
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.background}
 
-format-discharging = <label-discharging>
-label-discharging = "  %percentage%%  "
-label-discharging-foreground =  ${colors.background}
-format-discharging-foreground = ${colors.background}
-format-discharging-background = ${nord-theme.nord9}
+format-discharging = "<ramp-capacity><label-discharging>"
+label-discharging = "%percentage%% "
+label-discharging-foreground =  ${nord-theme.nord8}
+format-discharging-foreground = ${nord-theme.nord8}
+format-discharging-background = ${colors.background}
 
 format-full-prefix = "  "
 format-full-prefix-foreground = ${nord-theme.nord14}
@@ -555,12 +465,14 @@ bar-capacity-empty = |
 ;bar-capacity-empty-font = 3
 bar-capacity-empty-foreground = ${nord-theme.nord3}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground}
+ramp-capacity-0 = "  "
+ramp-capacity-0-foreground = ${nord-theme.nord11}
+ramp-capacity-1 = "  "
+ramp-capacity-1-foreground = ${nord-theme.nord13}
+ramp-capacity-2 = "  "
+ramp-capacity-3 = "  "
+ramp-capacity-4 = "  "
+ramp-capacity-foreground = ${nord-theme.nord8}
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -1125,13 +1037,13 @@ type = internal/alsa
 interval = 5
 format-volume = "<label-volume>"
 label-volume = "%{T2}  %{T-}%percentage%%"
-label-volume-background = ${nord-theme.nord9}
-format-volume-foreground = ${colors.background}
+label-volume-foreground = ${nord-theme.nord8}
+format-volume-background= ${colors.background}
 
 format-muted= "<label-muted>"
 label-muted = "%{T2}  %{T-}%percentage%%"
 
-label-muted-background = ${nord-theme.nord9}
+label-muted-background = ${colors.background}
 label-muted-foreground = ${nord-theme.nord11}
 
 bar-volume-width = 20
@@ -1209,11 +1121,11 @@ label-connected = "%signal%%"
 
 ;format-connected = "<label-connected> "
 format-connected = " <label-connected> "
-format-connected-foreground= ${colors.background}
-format-connected-background= ${nord-theme.nord9}
+format-connected-foreground= ${nord-theme.nord8}
+format-connected-background= ${colors.background}
 format-connected-prefix = "  "
-format-connected-prefix-foreground = ${colors.background}
-format-connected-prefix-background = ${nord-theme.nord9}
+format-connected-prefix-background= ${colors.background}
+format-connected-prefix-foreground = ${nord-theme.nord8}
 ;
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground}
@@ -1243,12 +1155,10 @@ format-disconnected-background = ${nord-theme.nord9}
 [module/xbacklight]
 ;https://github.com/jaagr/polybar/wiki/Module:-xbacklight
 type = internal/xbacklight
-format = <label> <bar>
-format-prefix = "   "
-format-prefix-foreground = ${colors.foreground}
+format = <label>
+format-prefix = "  "
+format-prefix-foreground = ${nord-theme.nord8}
 format-prefix-background = ${colors.background}
-format-prefix-underline = #9f78e1
-format-underline = #9f78e1
 label = %percentage%%
 bar-width = 10
 bar-indicator = 
@@ -1260,7 +1170,7 @@ bar-fill-foreground = #9f78e1
 bar-empty = 
 bar-empty-font = 2
 bar-empty-foreground = #fff
-format-foreground = ${colors.foreground}
+format-foreground = ${nord-theme.nord8}
 format-background = ${colors.background}
 
 ################################################################################
