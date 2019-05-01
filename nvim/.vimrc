@@ -5,12 +5,12 @@
 call plug#begin('~/.local/share/nvim/plugged')
 " call plug#begin('~/.vim/plugged')''
 " Devicon always load at first (parait il ...)
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 
 " General plugins
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'neomake/neomake'							" asynchronously run programs
+" Plug 'neomake/neomake'						" asynchronously run programs
 " Plug 'Shougo/neosnippet.vim'					" small templates for commonly used code that you can fill in on the fly
 " Plug 'Shougo/neosnippet-snippets'				" templates for snippet
 Plug 'vim-airline/vim-airline'
@@ -25,8 +25,8 @@ Plug 'leafgarland/typescript-vim'				" TypeScript syntax highlighting
 Plug 'pangloss/vim-javascript'					" JavaScript syntax highlighting
 Plug 'lervag/vimtex'							" LaTeX support
 Plug 'zchee/deoplete-go'						" Asynchronous GO completion
-Plug 'plasticboy/vim-markdown'
-Plug 'suan/vim-instant-markdown'
+Plug 'plasticboy/vim-markdown'					" Markdown syntax highlighting
+Plug 'storyn26383/vim-vue'						" Vuejs syntax highlighting
 
 " Auto close bracket
 " Plug 'raimondi/delimitmate'

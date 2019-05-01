@@ -55,9 +55,9 @@ bindsym $mod+Shift+Q kill
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+space exec rofi -show drun -show-icons -icon-theme
-
-bindsym Mod1+Tab exec rofi -show combi -show-icons -icon-theme
 bindsym $mod+p exec ~/.config/rofi/SYSTEM
+bindsym $mod+n exec ~/.config/rofi/NETWORK
+bindsym $mod+m exec ~/.config/rofi/MONITOR
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -205,9 +205,9 @@ new_float	pixel 5
 # bindsym $mod+p          exec screen
 # bindsym $mod+Shift+p    exec screens
 
-bindsym $mod+n          exec notify Notification
-bindsym $mod+Shift+n    exec notify -u low Notification
-bindsym $mod+Mod1+n     exec notify -u critical Notification
+# bindsym $mod+n          exec notify Notification
+# bindsym $mod+Shift+n    exec notify -u low Notification
+# bindsym $mod+Mod1+n     exec notify -u critical Notification
 
 # ScreenLock keybinding
 bindsym $mod+x exec sl

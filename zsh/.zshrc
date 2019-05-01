@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/blb/.oh-my-zsh"
+ export ZSH="/home/blb/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -131,3 +131,7 @@ export SOCCER_CLI_API_TOKEN=5eb8bc4a2eaa4fd9bc7cfb7db78d621a
 export LESS="-RX"
 
 export PATH=$HOME/.config/scripts:$PATH
+
+export CELLAR_ADDON_HOST=cellar.services.clever-cloud.com
+export CELLAR_ADDON_KEY_SECRET=Js7dwLUOS3TtOApedZga44ZuSqitIWZN49xusA==
+export CELLAR_ADDON_KEY_ID=2DIGCHF-DITYTZOS4LM8

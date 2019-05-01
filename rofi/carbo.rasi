@@ -3,7 +3,7 @@ configuration {
   yoffset: 64;
   lines: 4;
   fixed-num-lines: false;
-  display-drun: "Run ";
+  display-drun: "Run : ";
   display-window: "Switch";
   display-windowcd: "Switch";
 }

@@ -4,5 +4,5 @@ rofi.modi: window,ssh,run,drun,combi
 rofi.theme: ~/.config/rofi/carbo.rasi
 rofi.fullscreen:true
 rofi.terminal:alacritty
-rofi.font: Pango Monospace 12
+rofi.font: Pango Monospace 16
 rofi.drun-icon-theme: Papirus-Dark
