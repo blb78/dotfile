@@ -127,6 +127,12 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 ""
 
+# Assignation des logiciels à un espace:
+for_window [class="Spotify"] move container to workspace ;workspace 
+for_window [class="Alacritty"] move container to workspace 1;workspace 1
+for_window [class="Firefox"] move container to workspace 2;workspace 2
+for_window [class="Insomnia"] move container to workspace 9;workspace 9
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -210,7 +216,7 @@ new_float	pixel 5
 # bindsym $mod+Mod1+n     exec notify -u critical Notification
 
 # ScreenLock keybinding
-bindsym $mod+x exec sl
+# bindsym $mod+x exec sl
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
@@ -255,8 +261,8 @@ exec_always --no-startup-id $HOME/.config/scripts/xautolock.sh
 # Start compton compositor (for transparent)
 #exec_always --no-startup-id compton -f -D 2 &
 
-exec_always --no-startup-id killall dunst
-exec_always --no-startup-id dunst &
+# exec_always --no-startup-id killall dunst
+# exec_always --no-startup-id dunst &
 
 # Display bars
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -274,4 +280,7 @@ client.unfocused        $bg_in    $bg_in    $bg_in    $bg_in      $bg_in
 client.urgent           $bg_in    $bg_in    $bg_in    $bg_in      $bg_in
 client.placeholder      $bg_in    $bg_in    $bg_in    $bg_in      $bg_in
 client.background       #ffffff
+
+# Remap CapsLock
+exec --no-startup-id  $HOME/.config/scripts/xmodmap.sh
 

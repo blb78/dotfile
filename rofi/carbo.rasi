@@ -1,12 +1,3 @@
-configuration {
-  location: 2;
-  yoffset: 64;
-  lines: 4;
-  fixed-num-lines: false;
-  display-drun: "Run : ";
-  display-window: "Switch";
-  display-windowcd: "Switch";
-}
 * {
     accent: #5E81AC;
     textforeground: #ECEFF4;
@@ -132,3 +123,4 @@ configuration {
     spacing:    			0;
     text-color: 			@normal-foreground;
 }
+

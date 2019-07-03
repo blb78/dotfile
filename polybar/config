@@ -103,8 +103,8 @@ volume-max = #bf616a
 ;https://github.com/jaagr/polybar/wiki/Configuration
 
 locale = fr_FR.UTF-8
-monitor = eDP1
-;monitor-fallback = HDMI1
+monitor = ${env:MONITOR:}
+monitor-fallback = eDP1
 monitor-strict = false
 override-redirect = false
 bottom = false
@@ -303,8 +303,8 @@ label-visible-padding = 2
 ; Default: %icon%  %name%
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
-label-urgent-background = ${self.label-focused-background}
-label-urgent-foreground = #db104e
+label-urgent-background = ${nord-theme.nord11}
+label-urgent-foreground = ${colors.background}
 label-urgent-padding = 2
 
 format-foreground = ${colors.foreground}

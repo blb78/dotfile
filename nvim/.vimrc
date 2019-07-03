@@ -34,6 +34,9 @@ Plug 'storyn26383/vim-vue'						" Vuejs syntax highlighting
 " Linting code
 Plug 'https://github.com/w0rp/ale.git'
 Plug 'eslint/eslint' , { 'do': 'yarn install' }
+Plug 'https://github.com/itchyny/calendar.vim.git'
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
 
 " Formatter
 " "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -56,10 +59,10 @@ set autoread					  " reload file if the file changes on the disk
 set autowrite					  " write when switching buffers
 set autowriteall				  " write on :quit
 set clipboard=unnamedplus
-set colorcolumn=120				  " highlight the 80th column as an indicator
 set completeopt-=preview		  " remove the horrendous preview window
-set cursorline					  " highlight the current line for the cursor
+" set cursorline					  " highlight the current line for the cursor
 set encoding=utf-8
+set lazyredraw
 set list						  " show trailing whitespace
 set listchars=tab:\|\ ,trail:▫
 set nospell						  " disable spelling
@@ -67,7 +70,7 @@ set noswapfile					  " disable swapfile usage
 set nowrap
 set noerrorbells				  " No bells!
 set novisualbell				  " I said, no bells!
-set number						  " show number ruler
+" set number						  " show number ruler
 set ruler
 set formatoptions=tcqronj		  " set vims text formatting options
 set title						  " let vim set the terminal title
@@ -81,23 +84,32 @@ set shiftwidth=4					" Number of spaces to use for each step of (auto)indent<Pas
 set noexpandtab						" Use tabs, not spaces
 %retab!								" Retabulate the whole file
 
+" scroll windows
+nnoremap <C-k> <C-u>
+nnoremap <C-j> <C-d>
 
-" Disable Arrow keys in Escape mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+" " Disable Arrow keys in Escape mode
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
+"
+" " Disable Arrow keys in Insert mode
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
 
-" Disable Arrow keys in Insert mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+set number relativenumber
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter	* set norelativenumber
+:augroup END
 
 " AutoBracket
 inoremap { {}<Left>
-inoremap ' ''<Left>
-inoremap " ""<Left>
 
 " Allow vim to set a custom font or color for a word
 syntax enable
@@ -289,14 +301,14 @@ let g:go_fmt_command = "goimports"
 " xmap <C-k>	   <Plug>(neosnippet_expand_target)
 
 " Enable syntax highlighting per default
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
+" let g:go_highlight_types = 1
+" let g:go_highlight_fields = 1
+" let g:go_highlight_functions = 1
+" let g:go_highlight_methods = 1
+" let g:go_highlight_structs = 1
+" let g:go_highlight_operators = 1
+" let g:go_highlight_build_constraints = 1
+" let g:go_highlight_extra_types = 1
 
 " Show the progress when running :GoCoverage
 let g:go_echo_command_info = 1
@@ -314,14 +326,18 @@ let g:go_list_type = "quickfix"
 let g:go_test_show_name = 1
 
 " gometalinter configuration
-let g:go_metalinter_command = ""
+let g:go_metalinter_command = "golangci-lint"
 let g:go_metalinter_deadline = "5s"
 let g:go_metalinter_enabled = [
 	\ 'deadcode',
-	\ 'gocyclo',
+	\ 'errcheck',
+	\ 'gosimple',
 	\ 'golint',
 	\ 'ineffassign',
-	\ 'vet',
+	\ 'govet',
+	\ 'unused',
+	\ 'staticcheck',
+	\ 'structcheck',
 	\ 'vetshadow'
 \]
 
@@ -366,22 +382,3 @@ au FileType gitcommit setlocal textwidth=80
 "----------------------------------------------
 au FileType markdown setlocal spell
 au FileType markdown set syntax=markdown
-
-"----------------------------------------------
-" Function: JUMP
-"----------------------------------------------
-function! GotoJump()
-  jumps
-  let j = input("Please select your jump: ")
-  if j != ''
-	let pattern = '\v\c^\+'
-	if j =~ pattern
-	  let j = substitute(j, pattern, '', 'g')
-	  execute "normal " . j . "\<c-i>"
-	else
-	  execute "normal " . j . "\<c-o>"
-	endif
-  endif
-endfunction
-
-nmap <Leader>j :call GotoJump()<CR>

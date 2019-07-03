@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
+export FZF_DEFAULT_OPTS=" --ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 export GOPATH=/usr/lib/go
 
 # alias tmux='tmux -2'
@@ -110,28 +111,18 @@ export GOPATH=/usr/lib/go
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
 
-# dotfiles paths
-export ZSHRC="$HOME/.zshrc"
-export VIMRC="$HOME/.vimrc"
-export VIM_COLOR="$HOME/.vim/colors/carbo.vim"
-export ZSH_COLOR="$HOME/.oh_my_zsh/theme/carbo2.zsh-theme"
-export I3_CONFIG="$HOME/.config/i3/config"
-export POLYBAR_CONFIG="$HOME/.config/polybar/config"
-export ROFI_CONFIG="$HOME/.config/rofi/config"
-export ROFI_COLOR="$HOME/.config/rofi/carbo.rasi"
-export COMPTON_CONFIG="$HOME/.config/compton.conf"
-export DUNST_CONFIG="$HOME/.config/dunst/dunstrc"
-export DOTFILES="$HOME/dotfiles"
-export EXA_COLORS="*.md=1;33:ga=37:gm=33:gd=33:gv=33:gt=33:uu=36:sb=33:sn=33:uw=36:gw=36:tw:36:ue=32:ux=32:gx=32:tx=32:ur=34:gr=34:tr=34:da=35"
-export TODO="$HOME/TODO"
-
-export PATH="$PATH:$HOME/bin"
-export PYTHONPATH="$PYTHONPATH:$HOME/lib/python"
-export SOCCER_CLI_API_TOKEN=5eb8bc4a2eaa4fd9bc7cfb7db78d621a
-export LESS="-RX"
-
-export PATH=$HOME/.config/scripts:$PATH
-
 export CELLAR_ADDON_HOST=cellar.services.clever-cloud.com
 export CELLAR_ADDON_KEY_SECRET=Js7dwLUOS3TtOApedZga44ZuSqitIWZN49xusA==
 export CELLAR_ADDON_KEY_ID=2DIGCHF-DITYTZOS4LM8
+
+# plateform-manager
+export GL_PRIVATE_TOKEN=w63WmdUvoqn1FBSMRyXk
+export GL_GROUP_ID=3201404
+export CELLAR_HOST=cellar.services.clever-cloud.com
+export CELLAR_KEY=2DIGCHF-DITYTZOS4LM8
+export CELLAR_SECRET=Js7dwLUOS3TtOApedZga44ZuSqitIWZN49xusA==
+export CLEVER_CONSUMER_KEY=oR5lFOlaTDRVSaQL189lAH5qoJbTBt
+export CLEVER_CONSUMER_SECRET=OE2MoizvSVdFdmJ21hSnpHoSEhfyF9
+export CLEVER_TOKEN=eaaf15ae601340679e91fe71354a2302
+export CLEVER_SECRET=0cf1d514bf1e45f0a6c7cb1ce8c328a4
+export CLEVER_ORGANIZATION=orga_3ae718b0
