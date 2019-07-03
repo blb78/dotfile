@@ -314,10 +314,10 @@ let g:go_fmt_command = "goimports"
 let g:go_echo_command_info = 1
 
 " Show type information
-let g:go_auto_type_info = 1
+" let g:go_auto_type_info = 1
 
 " Highlight variable uses
-let g:go_auto_sameids = 1
+" let g:go_auto_sameids = 1
 
 " Fix for location list when vim-go is used together with Syntastic
 let g:go_list_type = "quickfix"
