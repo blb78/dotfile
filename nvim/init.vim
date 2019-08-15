@@ -134,11 +134,11 @@
 		nnoremap <C-l> $
 		nnoremap <C-j> <C-d>
 		nnoremap <C-k> <C-u>
-		" move a line
-		nnoremap <M-k>	ddkP
-		nnoremap <M-j>	ddp
+		" move around block
+		nnoremap <M-k> g'{
+		nnoremap <M-j> g'}
 	" }}}
-	" Plugins - {{{2
+	" Navigation - {{{2
 		" FZF - {{{3
 			nnoremap - :FZF<cr>
 		" }}}
