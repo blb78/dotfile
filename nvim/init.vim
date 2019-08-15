@@ -1,5 +1,6 @@
 " Abbreviations - {{{
 	inoreabbrev reutrn return
+	inoreabbrev retun return
 	inoreabbrev rt return
 " }}}
 " Basic settings - {{{
