@@ -107,8 +107,7 @@
 	" }}}2
 	" Markdown - {{{2
 		" Enable spell checking for markdown files
-		autocmd BufRead *.md setlocal spell spelllang=fr_FR
-		autocmd BufRead *.markdown setlocal spell spelllang=fr_FR
+		autocmd FileType markdown setlocal spell spelllang=fr_FR
 	" }}}
 " }}}
 " Mapping - {{{
