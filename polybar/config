@@ -147,7 +147,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3
 modules-center =date
-modules-right = xbacklight alsa battery
+modules-right = arch-aur-updates xbacklight alsa battery
 separator = " "
 
 ;dim-value = 1.0
@@ -364,11 +364,9 @@ label-muted = "  0%"
 type = custom/script
 exec = ~/.config/polybar/scripts/check-all-updates.sh
 interval = 1000
-label = Updates: %output%
-format-foreground = #ededed
-format-background = #AD69AF
-format-prefix = "  "
-format-prefix-foreground = #d7d7d7
+label ="  %output%"
+format-foreground = ${nord-theme.nord8}
+format-background = ${colors.background}
 
 
 [module/aur-updates]
@@ -450,20 +448,9 @@ label-discharging-foreground =  ${nord-theme.nord8}
 format-discharging-foreground = ${nord-theme.nord8}
 format-discharging-background = ${colors.background}
 
-format-full-prefix = "  "
-format-full-prefix-foreground = ${nord-theme.nord14}
-format-full-underline = ${nord-theme.nord10}
-format-foreground = ${colors.background}
-format-background = ${colors.background}
-
-bar-capacity-width = 20
-bar-capacity-format = %{+u}%{+o}%empty%%fill%%{-u}%{-o}
-bar-capacity-fill = |
-bar-capacity-fill-foreground = ${nord-theme.nord8}
-;bar-capacity-fill-font = 3
-bar-capacity-empty = |
-;bar-capacity-empty-font = 3
-bar-capacity-empty-foreground = ${nord-theme.nord3}
+label-full = "  %percentage%% "
+format-full-background= ${colors.background}
+format-full-foreground= ${nord-theme.nord8}
 
 ramp-capacity-0 = "  "
 ramp-capacity-0-foreground = ${nord-theme.nord11}
@@ -473,14 +460,6 @@ ramp-capacity-2 = "  "
 ramp-capacity-3 = "  "
 ramp-capacity-4 = "  "
 ramp-capacity-foreground = ${nord-theme.nord8}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-foreground = #a3c725
-animation-charging-framerate = 750
 
 ################################################################################
 
