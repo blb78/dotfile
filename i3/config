@@ -54,10 +54,13 @@ bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
-bindsym $mod+space exec rofi -show drun -show-icons -icon-theme
-bindsym $mod+p exec ~/.config/rofi/SYSTEM
+#bindsym $mod+space exec rofi -show drun -show-icons -icon-theme
+bindsym $mod+space exec ~/.config/rofi/scripts/appsmenu.sh
+bindsym $mod+p exec ~/.config/rofi/scripts/powermenu.sh
+# bindsym $mod+p exec ~/.config/rofi/SYSTEM
 bindsym $mod+n exec ~/.config/rofi/NETWORK
 bindsym $mod+m exec ~/.config/rofi/MONITOR
+bindsym $mod+a exec ~/.config/rofi/AUDIO
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -283,4 +286,7 @@ client.background       #ffffff
 
 # Remap CapsLock
 exec --no-startup-id  $HOME/.config/scripts/xmodmap.sh
-
+# Set SteelSeries Artic 7 works with stereo
+# sound card number for Artic 7 is actually number 1, if this number change for number 3
+# you have to set hw:3,1 (number 1 behind comma is the stereo setting)
+exec_always --no-startup-id pacmd load-module module-alsa-sink device=hw:1,1

@@ -13,6 +13,7 @@
 	set cursorline					  " highlight the current line for the cursor
 	set encoding=utf-8
 	set formatoptions=tcqronj		  " set vims text formatting options
+	set grepprg=rg\ --vimgrep
 	set hlsearch					  " disable search result highlighting
 	set incsearch					  " move to match as you type the search query
 	if has('nvim')
@@ -27,7 +28,7 @@
 	set nowrap
 	set noerrorbells				  " No bells!
 	set novisualbell				  " I said, no bells!
-	set relativenumber						  " show number line
+	set number relativenumber						  " show number line
 	set ruler						  " show the line and the column number of the cursor position
 	set laststatus=2					" Show status bar by default
 	set splitbelow					  " Create horizontal splits below the current window
@@ -43,16 +44,23 @@
 
 	syntax enable					  " Allow vim to set a custom font or color for a word
 	let mapleader = ','
+	let maplocalleader = 'ù'
 
-	:augroup numberColorToggle
-	:  autocmd!
-	:  autocmd InsertEnter * highlight LineNr ctermbg=green guifg=#A3BE8C
-	:  autocmd InsertLeave * highlight LineNr ctermbg=black guifg=#4C566A
-	:augroup END
-	:augroup  saving_hook
-	: autocmd BufLeave * silent! :wa " save on leaving
-	: autocmd BufWritePre * :%s/\s\+$//e " remove whitespace
-	:augroup END
+" }}}
+" Buffer Events - {{{
+	" Basic - {{{2
+		:augroup cleanFile
+		:	" save on leaving
+		:	autocmd BufLeave * silent! :wa
+		:	" remove whitespace
+		:	autocmd BufWritePre * :%s/\s\+$//e
+		:augroup END
+		:augroup numberColorToggle
+		:	autocmd!
+		:	autocmd InsertEnter * highlight LineNr ctermbg=green guifg=#A3BE8C
+		:	autocmd InsertLeave * highlight LineNr ctermbg=black guifg=#4C566A
+		:augroup END
+	" }}}
 " }}}
 " Dependencies - {{{
 	call plug#begin('~/.local/share/nvim/plugged')
@@ -114,9 +122,40 @@
 " Mapping - {{{
 	" Bracket {{{2
 		inoremap { {}<Left>
+		inoremap (( ()
 	" }}}
 	" Buffer - {{{2
 		nnoremap gb :ls<CR>:b<Space>
+		nnoremap <leader>b :Buffers<cr>
+	" }}}
+	" Marks - {{{2
+		nnoremap <leader>m :Marks<cr>
+		nnoremap <localleader>a 'Azz
+		nnoremap <localleader>b 'Bzz
+		nnoremap <localleader>c 'Czz
+		nnoremap <localleader>d 'Dzz
+		nnoremap <localleader>e 'Ezz
+		nnoremap <localleader>f 'Fzz
+		nnoremap <localleader>g 'Gzz
+		nnoremap <localleader>h 'Hzz
+		nnoremap <localleader>i 'Izz
+		nnoremap <localleader>j 'Jzz
+		nnoremap <localleader>k 'Kzz
+		nnoremap <localleader>l 'Lzz
+		nnoremap <localleader>m 'Mzz
+		nnoremap <localleader>n 'Nzz
+		nnoremap <localleader>o 'Ozz
+		nnoremap <localleader>p 'Pzz
+		nnoremap <localleader>q 'Qzz
+		nnoremap <localleader>r 'Rzz
+		nnoremap <localleader>s 'Szz
+		nnoremap <localleader>t 'Tzz
+		nnoremap <localleader>u 'Uzz
+		nnoremap <localleader>v 'Vzz
+		nnoremap <localleader>w 'Wzz
+		nnoremap <localleader>x 'Xzz
+		nnoremap <localleader>y 'Yzz
+		nnoremap <localleader>z 'Zzz
 	" }}}
 	" Moving - {{{2
 		" disable arrow keys in Escape mode
@@ -125,27 +164,40 @@
 		nnoremap <left> <nop>
 		nnoremap <right> <nop>
 		" disable arrow keys in Insert mode
-		inoremap <up> <nop>
-		inoremap <down> <nop>
-		inoremap <left> <nop>
-		inoremap <right> <nop>
+		" inoremap <up> <nop>
+		" inoremap <down> <nop>
+		" inoremap <left> <nop>
+		" inoremap <right> <nop>
 		" scroll on window
 		nnoremap <C-h> ^
 		nnoremap <C-l> $
-		nnoremap <C-j> <C-d>
-		nnoremap <C-k> <C-u>
-		" move around block
-		nnoremap <M-k> g'{
-		nnoremap <M-j> g'}
+		nnoremap <C-k> {
+		nnoremap <C-j> }
+
+		nnoremap <C-Left> <C-w><left>
+		nnoremap <C-Right> <C-w><right>
+		nnoremap <C-Up> <C-w><up>
+		nnoremap <C-Down> <C-w><down>
 	" }}}
 	" Navigation - {{{2
 		" FZF - {{{3
 			nnoremap - :FZF<cr>
 		" }}}
 	" }}}
+	" Opening - {{{2
+		" opening init.vim
+		nnoremap <leader><leader> :e $MYVIMRC<cr>
+	" }}}
 	" Removing - {{{2
 		" delete line in Insert mode
 		inoremap <C-d> <esc>ddi
+	" }}}
+	" Resizing - {{{2
+		" Disable arrow movement, resize splits instead.
+		nnoremap <Up>	 :resize +2<CR>
+		nnoremap <Down>  :resize -2<CR>
+		nnoremap <Left>  :vertical resize +2<CR>
+		nnoremap <Right> :vertical resize -2<CR>
 	" }}}
 	" Searching - {{{2
 		" search cword
@@ -230,9 +282,6 @@
 		" Set gopath and gobin
 		let $GOPATH=getcwd()
 		let $GOBIN='/home/blb/go/bin'
-		" Change test coverage color
-		hi! def		 goCoverageCovered	  ctermfg=cyan	guibg=#485962
-		hi! def		 goCoverageUncover	  ctermfg=red	guibg=#8A515B
 		" Run goimports when running gofmt
 		let g:go_fmt_command = "goimports"
 		" Enable syntax highlighting per default
@@ -270,7 +319,7 @@
 					\ 'vetshadow'
 					\]
 		" Set whether the JSON tags should be snakecase or camelcase.
-		let g:go_addtags_transform = "snakecase"
+		let g:go_addtags_transform = "camelcase"
 	" }}}
 " }}}
 " Theme - {{{
@@ -289,3 +338,15 @@
 		colorscheme nord
 	" }}}
 " }}}
+
+
+set path-=.,,
+set wildignore+=*/bin/*,*/github.com/*,*/gitlab.com/*,*/clevercloud/*,*/pkg/*,*/golang.org/*,*/gopkg.in/*
+set wildcharm=<C-z>
+nnoremap <leader>e :vsplit src/**/*<C-z><S-Tab>
+nnoremap <leader>f :find src/**/*<C-z><S-Tab>
+
+" Change test coverage color
+" Must be set at the end of vimrc
+hi! def		 goCoverageCovered	  ctermfg=cyan	guibg=#485962
+hi! def		 goCoverageUncover	  ctermfg=red	guibg=#8A515B
