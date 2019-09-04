@@ -42,12 +42,12 @@ create_symlink(){
 	cd ~/dev/dotfile/
 	rm ~/.config/alacritty/alacritty.yml
 	ln ~/dev/dotfile/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-	rm ~/.config/betterlockscreen/betterlockscreenrc
-	ln ~/dev/dotfile/betterlockscreen/betterlockscreenrc ~/.config/betterlockscreen/betterlockscreenrc
+	rm ~/.config/betterlockscreenrc
+	ln ~/dev/dotfile/betterlockscreen/betterlockscreenrc ~/.config/betterlockscreenrc
 	rm ~/.config/i3/config
 	ln ~/dev/dotfile/i3/config ~/.config/i3/config
 	rm ~/.config/nvim/init.vim
-	ln ~/dev/dotfile/nvim/.vimrc ~/.config/nvim/init.vim
+	ln ~/dev/dotfile/nvim/init.vim ~/.config/nvim/init.vim
 	cp -R ~/dev/dotfile/rofi	~/.config/rofi
 }
 # UPDATE ARCH
