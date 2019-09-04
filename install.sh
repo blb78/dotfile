@@ -40,22 +40,15 @@ clone_dotfile(){
 }
 create_symlink(){
 	cd ~/dev/dotfile/
-	if [ -f "~/.config/alacritty/alacritty.yml" ]; then
-		rm ~/.config/alacritty/alacritty.yml
-	fi
-	ln ./alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-	if [ -f "~/.config/betterlockscreen/betterlockscreenrc" ]; then
-		rm ~/.config/betterlockscreen/betterlockscreenrc
-	fi
-	ln ./betterlockscreen/betterlockscreenrc ~/.config/betterlockscreen/betterlockscreenrc
-	if [ -f "~/.config/i3/config" ]; then
-		rm ~/.config/i3/config
-	fi
-	ln ./i3/config ~/.config/i3/config
-	if [ -f "~/.config/nvim/init.vim" ]; then
-		rm ~/.config/nvim/init.vim
-	fi
-	ln ./nvim/.vimrc ~/.config/nvim/init.vim
+	rm ~/.config/alacritty/alacritty.yml
+	ln ~/dev/dotfile/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+	rm ~/.config/betterlockscreen/betterlockscreenrc
+	ln ~/dev/dotfile/betterlockscreen/betterlockscreenrc ~/.config/betterlockscreen/betterlockscreenrc
+	rm ~/.config/i3/config
+	ln ~/dev/dotfile/i3/config ~/.config/i3/config
+	rm ~/.config/nvim/init.vim
+	ln ~/dev/dotfile/nvim/.vimrc ~/.config/nvim/init.vim
+	cp -R ~/dev/dotfile/rofi	~/.config/rofi
 }
 # UPDATE ARCH
 echo "Do you wish to update arch ?"
