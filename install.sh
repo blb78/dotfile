@@ -38,9 +38,21 @@ clone_dotfile(){
 	read -p "Directory path ? : " DIRECTORY
 	git clone git@github.com:blb78/dotfile.git ~/dev/
 	cd ~/dev/dotfile/
+	if [ -f "~/.config/alacritty/alacritty.yml" ]; then
+		rm ~/.config/alacritty/alacritty.yml
+	fi
 	ln ./alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+	if [ -f "~/.config/betterlockscreen/betterlockscreenrc" ]; then
+		rm ~/.config/betterlockscreen/betterlockscreenrc
+	fi
 	ln ./betterlockscreen/betterlockscreenrc ~/.config/betterlockscreen/betterlockscreenrc
+	if [ -f "~/.config/i3/config" ]; then
+		rm ~/.config/i3/config
+	fi
 	ln ./i3/config ~/.config/i3/config
+	if [ -f "~/.config/nvim/init.vim" ]; then
+		rm ~/.config/nvim/init.vim
+	fi
 	ln ./nvim/.vimrc ~/.config/nvim/init.vim
 }
 # UPDATE ARCH
