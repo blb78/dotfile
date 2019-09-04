@@ -37,6 +37,8 @@ run_yay(){
 clone_dotfile(){
 	read -p "Directory path ? : " DIRECTORY
 	git clone git@github.com:blb78/dotfile.git ~/dev/
+}
+create_symlink(){
 	cd ~/dev/dotfile/
 	if [ -f "~/.config/alacritty/alacritty.yml" ]; then
 		rm ~/.config/alacritty/alacritty.yml
@@ -110,6 +112,14 @@ echo "Do you wish to install your dotfile repository ?"
 select yn in "Yes" "No"; do
 	case $yn in
 		Yes ) clone_dotfile; break;;
+		No ) break;;
+	esac
+done
+# Create symlink
+echo "Do you wish to create symlink for your apps ?"
+select yn in "Yes" "No"; do
+	case $yn in
+		Yes ) create_symlink; break;;
 		No ) break;;
 	esac
 done
