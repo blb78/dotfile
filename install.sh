@@ -11,6 +11,10 @@ install_yay(){
 install_ohmyzsh(){
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
+install_vim_plug(){
+	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	}
 generate_ssh(){
 	read -p "Enter your github email: " email
 	ssh-keygen -t rsa -b 4096 -C "$email"
@@ -74,6 +78,13 @@ for val in ${PacmanApps[@]}; do
 			No ) break;;
 		esac
 	done
+done
+echo "Do you wish to install vim-plug ?"
+select yn in "Yes" "No"; do
+	case $yn in
+		Yes ) install_vim_plug; break;;
+		No ) break;;
+	esac
 done
 echo "Do you wish to install OhMyZsh ?"
 select yn in "Yes" "No"; do
