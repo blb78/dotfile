@@ -38,9 +38,10 @@ run_yay(){
 		echo -e "\e[32m$1 is already installed\e[0m"
 	fi
 }
-clone_dotfile(){
-	read -p "Directory path ? : " DIRECTORY
-	git clone git@github.com:blb78/dotfile.git ~/dev/
+clone_dotfiles(){
+	read -p "Which repository (git@github.com:john/doe.git) do we clone ? " REPOSITORY
+	read -p "And where can we clone this repository ? (/home/john/git/) " DIRECTORY
+	git clone $REPOSITORY $DIRECTORY
 }
 create_symlink(){
 	cd ~/dev/dotfile/
@@ -52,7 +53,8 @@ create_symlink(){
 	ln ~/dev/dotfile/i3/config ~/.config/i3/config
 	rm ~/.config/nvim/init.vim
 	ln ~/dev/dotfile/nvim/init.vim ~/.config/nvim/init.vim
-	cp -R ~/dev/dotfile/rofi	~/.config/rofi
+	rm -rf ~/.config/rofi
+	cp -R ~/dev/dotfile/rofi ~/.config/rofi
 }
 # UPDATE ARCH
 echo "Do you wish to update arch ?"
@@ -62,7 +64,7 @@ select yn in "Yes" "No"; do
 		No ) break;;
 	esac
 done
-echo "Do you whish to install yay ?"
+echo "Do you wish to install yay ?"
 select yn in "Yes" "No"; do
 	case $yn in
 		Yes ) install_yay;break;;
@@ -112,10 +114,10 @@ select yn in "Yes" "No"; do
 	esac
 done
 # Clone my dotfile repo
-echo "Do you wish to install your dotfile repository ?"
+echo "Do you wish to install your dotfiles repository ?"
 select yn in "Yes" "No"; do
 	case $yn in
-		Yes ) clone_dotfile; break;;
+		Yes ) clone_dotfiles; break;;
 		No ) break;;
 	esac
 done
