@@ -1,6 +1,13 @@
 update_arch(){
 	yay
 }
+install_yay(){
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+	cd ..
+	rmdir yay/
+}
 install_ohmyzsh(){
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
@@ -36,6 +43,13 @@ echo "Do you wish to update arch ?"
 select yn in "Yes" "No"; do
 	case $yn in
 		Yes ) update_arch; break;;
+		No ) break;;
+	esac
+done
+echo "Do you whish to install yay ?"
+select yn in "Yes" "No"; do
+	case $yn in
+		Yes ) install_yay;break;;
 		No ) break;;
 	esac
 done
