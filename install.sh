@@ -34,10 +34,15 @@ run_yay(){
 		echo -e "\e[32m$1 is already installed\e[0m"
 	fi
 }
-###############################################################################
-#
-###############################################################################
-
+clone_dotfile(){
+	read -p "Directory path ? : " DIRECTORY
+	git clone git@github.com:blb78/dotfile.git ~/dev/
+	cd ~/dev/dotfile/
+	ln ./alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+	ln ./betterlockscreen/betterlockscreenrc ~/.config/betterlockscreen/betterlockscreenrc
+	ln ./i3/config ~/.config/i3/config
+	ln ./nvim/.vimrc ~/.config/nvim/init.vim
+}
 # UPDATE ARCH
 echo "Do you wish to update arch ?"
 select yn in "Yes" "No"; do
@@ -88,9 +93,12 @@ select yn in "Yes" "No"; do
 		No ) break;;
 	esac
 done
+# Clone my dotfile repo
+echo "Do you wish to install your dotfile repository ?"
+select yn in "Yes" "No"; do
+	case $yn in
+		Yes ) clone_dotfile; break;;
+		No ) break;;
+	esac
+done
 
-
-# ln ./alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-# ln ./betterlockscreen/betterlockscreenrc ~/.config/betterlockscreen/betterlockscreenrc
-# ln ./i3/config ~/.config/i3/config
-# ln ./nvim/.vimrc ~/.config/nvim/init.vim
