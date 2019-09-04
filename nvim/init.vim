@@ -127,6 +127,7 @@
 	" Buffer - {{{2
 		nnoremap gb :ls<CR>:b<Space>
 		nnoremap <leader>b :Buffers<cr>
+		nnoremap _ :Buffers<cr>
 	" }}}
 	" Marks - {{{2
 		nnoremap <leader>m :Marks<cr>
@@ -217,6 +218,7 @@
 		"nnoremap <localleader>'ciw''<ESC>Pl
 		" a selection
 		vnoremap <leader>" c""<ESC>Pl
+		vnoremap <leader>= c{}<ESC>Pl
 		" celui la ne fonctionne pas :-(
 		"vnoremap <localleader>' c''<ESC>Pl
 	" }}}
