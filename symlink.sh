@@ -23,7 +23,8 @@ create_symlink(){
 	if [ -f "~/.config/.zshrc" ];then
 		rm ~/.config/.zshrc
 	fi
-	ln ~/dev/dotfile/zsh/.zshrc ~/.config
+	rm ~/.zshrc
+	ln ~/dev/dotfile/zsh/.zshrc ~/
 }
 # Create symlink
 echo "Do you wish to create symlink for your apps ?"
