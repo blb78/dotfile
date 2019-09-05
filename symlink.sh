@@ -1,30 +1,26 @@
 create_symlink(){
 	cd ~/dev/dotfile/
-	if [ -f "~/.config/alacritty/alacritty.yml" ];then
-		rm ~/.config/alacritty/alacritty.yml
-	fi
+	# ALACRITTY
+	rm ~/.config/alacritty/alacritty.yml
 	ln ~/dev/dotfile/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-	if [ -f "~/.config/betterlockscreenrc" ];then
-		rm ~/.config/betterlockscreenrc
-	fi
+	# BETTERLOCKSCREEN
+	rm ~/.config/betterlockscreenrc
 	ln ~/dev/dotfile/betterlockscreen/betterlockscreenrc ~/.config/betterlockscreenrc
-	if [ -f "~/.config/i3/config" ];then
-		rm ~/.config/i3/config
-	fi
+	# I3
+	rm ~/.config/i3/config
 	ln ~/dev/dotfile/i3/config ~/.config/i3/config
-	if [ -f "~/.config/nvim/init.vim" ];then
-		rm ~/.config/nvim/init.vim
-	fi
+	# NVIM
+	rm ~/.config/nvim/init.vim
 	ln ~/dev/dotfile/nvim/init.vim ~/.config/nvim/init.vim
-	if [ -d "~/.config/rofi" ];then
-		rm ~/.config/rofi
-	fi
+	# ROFI
+	rm ~/.config/rofi
 	cp -R ~/dev/dotfile/rofi ~/.config/rofi
-	if [ -f "~/.config/.zshrc" ];then
-		rm ~/.config/.zshrc
-	fi
+	# ZSH
 	rm ~/.zshrc
 	ln ~/dev/dotfile/zsh/.zshrc ~/
+	# TMUX
+	rm ~/.tmux.conf
+	ln ~/dev/dotfile/tmux/.tmux.conf ~/
 }
 # Create symlink
 echo "Do you wish to create symlink for your apps ?"
