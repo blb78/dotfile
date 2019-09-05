@@ -2,11 +2,15 @@ update_arch(){
 	yay
 }
 install_yay(){
-	git clone https://aur.archlinux.org/yay.git
-	cd yay
-	makepkg -si
-	cd ..
-	rm -rf yay/
+	if ! type yay > /dev/null; then
+		git clone https://aur.archlinux.org/yay.git
+		cd yay
+		makepkg -si
+		cd ..
+		rm -rf yay/
+	else
+		echo -e "\e[32myay is already installed\e[0m"
+	fi
 }
 install_ohmyzsh(){
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -42,19 +46,6 @@ clone_dotfiles(){
 	read -p "Which repository (git@github.com:john/doe.git) do we clone ? " REPOSITORY
 	read -p "And where can we clone this repository ? (/home/john/git/) " DIRECTORY
 	git clone $REPOSITORY $DIRECTORY
-}
-create_symlink(){
-	cd ~/dev/dotfile/
-	rm ~/.config/alacritty/alacritty.yml
-	ln ~/dev/dotfile/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-	rm ~/.config/betterlockscreenrc
-	ln ~/dev/dotfile/betterlockscreen/betterlockscreenrc ~/.config/betterlockscreenrc
-	rm ~/.config/i3/config
-	ln ~/dev/dotfile/i3/config ~/.config/i3/config
-	rm ~/.config/nvim/init.vim
-	ln ~/dev/dotfile/nvim/init.vim ~/.config/nvim/init.vim
-	rm -rf ~/.config/rofi
-	cp -R ~/dev/dotfile/rofi ~/.config/rofi
 }
 # UPDATE ARCH
 echo "Do you wish to update arch ?"
@@ -121,12 +112,3 @@ select yn in "Yes" "No"; do
 		No ) break;;
 	esac
 done
-# Create symlink
-echo "Do you wish to create symlink for your apps ?"
-select yn in "Yes" "No"; do
-	case $yn in
-		Yes ) create_symlink; break;;
-		No ) break;;
-	esac
-done
-
