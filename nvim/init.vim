@@ -112,8 +112,42 @@
 		:	autocmd FileType go nmap <leader>gdh <Plug>(go-def-split)
 		:	autocmd FileType go nmap <leader>gD <Plug>(go-doc)
 		:	autocmd FileType go nmap <leader>gDv <Plug>(go-doc-vertical)
+		:	autocmd FileType go nnoremap <localleader>a 'Azz
+		:	autocmd FileType go nnoremap <localleader>b 'Bzz
+		:	autocmd FileType go nnoremap <localleader>c 'Czz
+		:	autocmd FileType go nnoremap <localleader>d 'Dzz
+		:	autocmd FileType go nnoremap <localleader>e 'Ezz
+		:	autocmd FileType go nnoremap <localleader>f 'Fzz
+		:	autocmd FileType go nnoremap <localleader>g 'Gzz
+		:	autocmd FileType go nnoremap <localleader>h 'Hzz
+		:	autocmd FileType go nnoremap <localleader>i 'Izz
+		:	autocmd FileType go nnoremap <localleader>j 'Jzz
+		:	autocmd FileType go nnoremap <localleader>k 'Kzz
+		:	autocmd FileType go nnoremap <localleader>l 'Lzz
+		:	autocmd FileType go nnoremap <localleader>m 'Mzz
+		:	autocmd FileType go nnoremap <localleader>n 'Nzz
+		:	autocmd FileType go nnoremap <localleader>o 'Ozz
+		:	autocmd FileType go nnoremap <localleader>p 'Pzz
+		:	autocmd FileType go nnoremap <localleader>q 'Qzz
+		:	autocmd FileType go nnoremap <localleader>r 'Rzz
+		:	autocmd FileType go nnoremap <localleader>s 'Szz
+		:	autocmd FileType go nnoremap <localleader>t 'Tzz
+		:	autocmd FileType go nnoremap <localleader>u 'Uzz
+		:	autocmd FileType go nnoremap <localleader>v 'Vzz
+		:	autocmd FileType go nnoremap <localleader>w 'Wzz
+		:	autocmd FileType go nnoremap <localleader>x 'Xzz
+		:	autocmd FileType go nnoremap <localleader>y 'Yzz
+		:	autocmd FileType go nnoremap <localleader>z 'Zzz
 		:augroup END
 	" }}}2
+	" LaTeX - {{{2
+		" Enable spell checking for latex files
+		autocmd FileType tex setlocal spell spelllang=fr_FR
+		autocmd FileType tex set textwidth=80
+		autocmd FileType tex set wrap linebreak nolist
+		autocmd FileType tex nnoremap <A-j> gj
+		autocmd FileType tex nnoremap <A-k> gk
+	" }}}
 	" Markdown - {{{2
 		" Enable spell checking for markdown files
 		autocmd FileType markdown setlocal spell spelllang=fr_FR
@@ -131,39 +165,13 @@
 	" }}}
 	" Marks - {{{2
 		nnoremap <leader>m :Marks<cr>
-		nnoremap <localleader>a 'Azz
-		nnoremap <localleader>b 'Bzz
-		nnoremap <localleader>c 'Czz
-		nnoremap <localleader>d 'Dzz
-		nnoremap <localleader>e 'Ezz
-		nnoremap <localleader>f 'Fzz
-		nnoremap <localleader>g 'Gzz
-		nnoremap <localleader>h 'Hzz
-		nnoremap <localleader>i 'Izz
-		nnoremap <localleader>j 'Jzz
-		nnoremap <localleader>k 'Kzz
-		nnoremap <localleader>l 'Lzz
-		nnoremap <localleader>m 'Mzz
-		nnoremap <localleader>n 'Nzz
-		nnoremap <localleader>o 'Ozz
-		nnoremap <localleader>p 'Pzz
-		nnoremap <localleader>q 'Qzz
-		nnoremap <localleader>r 'Rzz
-		nnoremap <localleader>s 'Szz
-		nnoremap <localleader>t 'Tzz
-		nnoremap <localleader>u 'Uzz
-		nnoremap <localleader>v 'Vzz
-		nnoremap <localleader>w 'Wzz
-		nnoremap <localleader>x 'Xzz
-		nnoremap <localleader>y 'Yzz
-		nnoremap <localleader>z 'Zzz
 	" }}}
 	" Moving - {{{2
 		" disable arrow keys in Escape mode
-		nnoremap <up> <nop>
-		nnoremap <down> <nop>
-		nnoremap <left> <nop>
-		nnoremap <right> <nop>
+		" nnoremap <up> <nop>
+		" nnoremap <down> <nop>
+		" nnoremap <left> <nop>
+		" nnoremap <right> <nop>
 		" disable arrow keys in Insert mode
 		" inoremap <up> <nop>
 		" inoremap <down> <nop>
@@ -195,10 +203,10 @@
 	" }}}
 	" Resizing - {{{2
 		" Disable arrow movement, resize splits instead.
-		nnoremap <Up>	 :resize +2<CR>
-		nnoremap <Down>  :resize -2<CR>
-		nnoremap <Left>  :vertical resize +2<CR>
-		nnoremap <Right> :vertical resize -2<CR>
+		" nnoremap <Up>	 :resize +2<CR>
+		" nnoremap <Down>  :resize -2<CR>
+		" nnoremap <Left>  :vertical resize +2<CR>
+		" nnoremap <Right> :vertical resize -2<CR>
 	" }}}
 	" Searching - {{{2
 		" search cword
@@ -323,6 +331,9 @@
 		" Set whether the JSON tags should be snakecase or camelcase.
 		let g:go_addtags_transform = "camelcase"
 	" }}}
+	" Plugin: lervag/vimtex - {{{2
+		let g:vimtex_view_method = 'zathura'
+	" }}}
 " }}}
 " Theme - {{{
 	" Nord - {{{2
@@ -352,3 +363,18 @@ nnoremap <leader>f :find src/**/*<C-z><S-Tab>
 " Must be set at the end of vimrc
 hi! def		 goCoverageCovered	  ctermfg=cyan	guibg=#485962
 hi! def		 goCoverageUncover	  ctermfg=red	guibg=#8A515B
+
+
+" spell checking
+function! ToggleSpellLang()
+	" toggle between en and fr
+	if &spelllang =~# 'en'
+		:set spelllang=fr
+	else
+		:set spelllang=en
+	endif
+endfunction
+nnoremap <F1> :setlocal spell!<CR> " toggle spell on or off
+nnoremap <F2> :call ToggleSpellLang()<CR> " toggle language
+
+

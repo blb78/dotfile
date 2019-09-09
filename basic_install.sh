@@ -15,6 +15,12 @@ install_yay(){
 install_ohmyzsh(){
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
+install_z(){
+	wget -L https://raw.githubusercontent.com/rupa/z/master/z.sh
+	sudo chmod +x z.sh
+	mkdir ~/.config/z
+	mv z.sh ~/.config/z/
+}
 install_vim_plug(){
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -95,6 +101,13 @@ for val in ${YayApps[@]}; do
 			No ) break;;
 		esac
 	done
+done
+echo "Do you wish to install rupa/z	?"
+select yn in "Yes" "No"; do
+	case $yn in
+		Yes ) install_z; break;;
+		No ) break;;
+	esac
 done
 # Generate SSH key on github
 echo "Do you wish to generate github's ssh key ?"
