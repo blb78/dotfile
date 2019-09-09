@@ -115,7 +115,7 @@ done
 echo "Do you wish to install tpm for tmux theme ?"
 select yn in "Yes" "No"; do
 	case $yn in
-		Yes ) install_tpm:break;;
+		Yes ) install_tpm;break;;
 		No ) break;;
 	esac
 done
