@@ -22,7 +22,7 @@ install_z(){
 	mv z.sh ~/.config/z/
 }
 install_tpm(){
-	$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 install_vim_plug(){
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
