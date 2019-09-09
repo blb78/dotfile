@@ -27,7 +27,17 @@ install_tpm(){
 install_vim_plug(){
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	}
+}
+install_powerlinefonts(){
+	# clone
+	git clone https://github.com/powerline/fonts.git --depth=1
+	# install
+	cd fonts
+	./install.sh
+	# clean-up a bit
+	cd ..
+	rm -rf fonts
+}
 generate_ssh(){
 	read -p "Enter your github email: " email
 	ssh-keygen -t rsa -b 4096 -C "$email"
@@ -132,6 +142,14 @@ echo "Do you wish to install your dotfiles repository ?"
 select yn in "Yes" "No"; do
 	case $yn in
 		Yes ) clone_dotfiles; break;;
+		No ) break;;
+	esac
+done
+
+echo "Do you wish to install powerlinefonts ?"
+select yn in "Yes" "No"; do
+	case $yn in
+		Yes ) install_powerlinefonts;break;;
 		No ) break;;
 	esac
 done
