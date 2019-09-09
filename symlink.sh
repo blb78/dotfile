@@ -13,7 +13,7 @@ create_symlink(){
 	rm ~/.config/nvim/init.vim
 	ln ~/dev/dotfile/nvim/init.vim ~/.config/nvim/init.vim
 	# ROFI
-	rm ~/.config/rofi
+	rm -rf ~/.config/rofi
 	cp -R ~/dev/dotfile/rofi ~/.config/rofi
 	# ZSH
 	rm ~/.zshrc
