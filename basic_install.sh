@@ -21,6 +21,9 @@ install_z(){
 	mkdir ~/.config/z
 	mv z.sh ~/.config/z/
 }
+install_tpm(){
+	$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
 install_vim_plug(){
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -106,6 +109,13 @@ echo "Do you wish to install rupa/z	?"
 select yn in "Yes" "No"; do
 	case $yn in
 		Yes ) install_z; break;;
+		No ) break;;
+	esac
+done
+echo "Do you wish to install tpm for tmux theme ?"
+select yn in "Yes" "No"; do
+	case $yn in
+		Yes ) install_tpm:break;;
 		No ) break;;
 	esac
 done
