@@ -103,7 +103,7 @@ volume-max = #bf616a
 ;https://github.com/jaagr/polybar/wiki/Configuration
 
 locale = fr_FR.UTF-8
-monitor = ${env:MONITOR:}
+monitor = ${env:MONITOR:fallback-value}
 monitor-fallback = eDP1
 monitor-strict = false
 override-redirect = false
