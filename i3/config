@@ -232,10 +232,10 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
+# Killing i3status with SIGUSR1 will trigger an immediate refresh. This works with i3status ≥ v2.7.
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 # Spotify related key bindings
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
@@ -274,7 +274,7 @@ bindsym $mod+shift+x exec betterlockscreen -l blur
 # exec_always --no-startup-id dunst &
 
 # Display bars
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id $HOME/.config/polybar/launch.sh
 
 
 set $color  #FF9988
@@ -292,7 +292,3 @@ client.background       #ffffff
 
 # Remap CapsLock
 exec --no-startup-id  $HOME/.config/scripts/xmodmap.sh
-# Set SteelSeries Artic 7 works with stereo
-# sound card number for Artic 7 is actually number 1, if this number change for number 3
-# you have to set hw:3,1 (number 1 behind comma is the stereo setting)
-exec_always --no-startup-id pacmd load-module module-alsa-sink device=hw:1,1

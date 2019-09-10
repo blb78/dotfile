@@ -147,7 +147,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3
 modules-center =date
-modules-right = arch-aur-updates xbacklight alsa battery
+modules-right = arch-aur-updates pavolume
 separator = " "
 
 ;dim-value = 1.0
