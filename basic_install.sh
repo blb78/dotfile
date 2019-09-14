@@ -81,7 +81,7 @@ select yn in "Yes" "No"; do
 		No ) break;;
 	esac
 done
-declare -a PacmanApps=("alacritty" "curl" "nvim" "openssh" "powerline" "powerline-fonts" "rofi" "tmux" "vim" "wget" "xclip" "zsh")
+declare -a PacmanApps=("alacritty" "curl" "dunst" "feh" "nvim" "openssh" "powerline" "powerline-fonts" "rofi" "tmux" "vim" "wget" "xclip" "zsh")
 for val in ${PacmanApps[@]}; do
 	echo "Do you wish to install $val ?"
 	select yn in "Yes" "No"; do
