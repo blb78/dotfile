@@ -80,7 +80,7 @@
 		Plug 'plasticboy/vim-markdown'					" Markdown syntax highlighting
 		Plug 'storyn26383/vim-vue'						" Vuejs syntax highlighting
 		" Linting code
-		Plug 'https://github.com/w0rp/ale.git'
+		Plug 'dense-analysis/ale'
 		Plug 'eslint/eslint' , { 'do': 'yarn install' }
 
 		Plug 'blb78/nord-vim'
@@ -376,5 +376,7 @@ function! ToggleSpellLang()
 endfunction
 nnoremap <F1> :setlocal spell!<CR> " toggle spell on or off
 nnoremap <F2> :call ToggleSpellLang()<CR> " toggle language
+
+vnoremap <leader>e ctmp<esc>Otmp:=<esc>p:%s/tmp//g<left><left>
 
 

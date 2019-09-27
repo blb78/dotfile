@@ -20,7 +20,7 @@ case $chosen in
         systemctl reboot
         ;;
     $lock)
-        light-locker-command -l
+		betterlockscreen -l blur
         ;;
     $suspend)
         mpc -q pause
