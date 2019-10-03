@@ -267,7 +267,7 @@ exec_always --no-startup-id xset r rate 250 50
 # set lockscreen background as wallpaper
 exec --no-startup-id betterlockscreen -w
 bindsym $mod+shift+x exec betterlockscreen -l blur
-# exec_always --no-startup-id $HOME/.config/scripts/xautolock.sh
+exec_always --no-startup-id $HOME/.config/scripts/xautolock.sh
 
 # Start compton compositor (for transparent)
 #exec_always --no-startup-id compton -f -D 2 &
