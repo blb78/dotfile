@@ -67,8 +67,8 @@ bindsym $mod+a exec --no-startup-id ~/.config/rofi/scripts/audiomenu.sh
 # bindsym $mod+m exec ~/.config/rofi/MONITOR
 # bindsym $mod+a exec ~/.config/rofi/AUDIO
 bindsym $mod+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show combi
-bindsym $mod+d exec --no-startup-id ~/.config/dunst/displaydate.sh
-bindsym $mod+b exec --no-startup-id ~/.config/dunst/displaybattery.sh
+bindsym $mod+t exec --no-startup-id ~/.config/dunst/datetime.sh
+bindsym $mod+b exec --no-startup-id ~/.config/dunst/battery.sh
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
