@@ -54,3 +54,7 @@ export CLEVER_ORGANIZATION=orga_3ae718b0-8a4d-4c14-a49b-65f2b8bdfcd4
 
 # FOR POLYBAR CONFING
 export MONITOR=HDMI-0
+
+alias gwa='git worktree add'
+alias gwl='git worktree list'
+alias gwr='git worktree remove'

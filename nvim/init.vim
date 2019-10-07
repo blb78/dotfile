@@ -41,11 +41,9 @@
 	set shiftwidth=4					" Number of spaces to use for each step of (auto)indent<Paste>
 	set noexpandtab						" Use tabs, not spaces
 	%retab!								" Retabulate the whole file
-
 	syntax enable					  " Allow vim to set a custom font or color for a word
 	let mapleader = ','
 	let maplocalleader = 'ù'
-
 " }}}
 " Buffer Events - {{{
 	" Basic - {{{2
@@ -64,26 +62,26 @@
 " }}}
 " Dependencies - {{{
 	call plug#begin('~/.local/share/nvim/plugged')
-		" General
-		Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " asynchronous completion
-		Plug 'zchee/deoplete-go'						" Asynchronous GO completion
-		Plug 'vim-airline/vim-airline'
-		Plug 'vim-airline/vim-airline-themes'
-		Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-		Plug 'junegunn/fzf.vim'
-		Plug 'takac/vim-hardtime'
-		" Language support
-		Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go support
-		Plug 'leafgarland/typescript-vim'				" TypeScript syntax highlighting
-		Plug 'pangloss/vim-javascript'					" JavaScript syntax highlighting
-		Plug 'lervag/vimtex'							" LaTeX support
-		Plug 'plasticboy/vim-markdown'					" Markdown syntax highlighting
-		Plug 'storyn26383/vim-vue'						" Vuejs syntax highlighting
-		" Linting code
-		Plug 'dense-analysis/ale'
-		Plug 'eslint/eslint' , { 'do': 'yarn install' }
-
-		Plug 'blb78/nord-vim'
+	" General
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " asynchronous completion
+	Plug 'zchee/deoplete-go'						" Asynchronous GO completion
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+	Plug 'junegunn/fzf.vim'
+	Plug 'takac/vim-hardtime'
+	" Language support
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go support
+	Plug 'leafgarland/typescript-vim'				" TypeScript syntax highlighting
+	Plug 'pangloss/vim-javascript'					" JavaScript syntax highlighting
+	Plug 'lervag/vimtex'							" LaTeX support
+	Plug 'plasticboy/vim-markdown'					" Markdown syntax highlighting
+	Plug 'storyn26383/vim-vue'						" Vuejs syntax highlighting
+	" Linting code
+	Plug 'dense-analysis/ale'
+	Plug 'eslint/eslint' , { 'do': 'yarn install' }
+	" Theme
+	Plug 'blb78/nord-vim'
 	call plug#end()
 " }}}
 " FileType- {{{
@@ -160,7 +158,6 @@
 	" }}}
 	" Buffer - {{{2
 		nnoremap gb :ls<CR>:b<Space>
-		nnoremap <leader>b :Buffers<cr>
 		nnoremap _ :Buffers<cr>
 	" }}}
 	" Marks - {{{2
@@ -195,7 +192,7 @@
 	" }}}
 	" Opening - {{{2
 		" opening init.vim
-		nnoremap <leader><leader> :e $MYVIMRC<cr>
+		nnoremap <localleader><leader> :e $MYVIMRC<cr>
 	" }}}
 	" Removing - {{{2
 		" delete line in Insert mode
@@ -239,117 +236,118 @@
 	" }}}
 " }}}
 " Plugins - {{{
-	" Plugin: w0rp/ale - {{{2
-		let g:ale_sign_error = '⤫'
-		let g:ale_sign_warning = '⚠'
-		let g:ale_fix_on_save = 1
-		let g:ale_fixers = {
-					\	'javascript': ['prettier', 'eslint'],
-					\	'typescript': ['prettier', 'eslint'],
-					\	'vue': ['prettier', 'eslint'],
-					\	'html': ['prettier', 'eslint'],
-					\	'css': ['prettier'],
-					\	'less': ['prettier'],
-					\	'scss': ['prettier'],
-					\	'json': ['prettier'],
-					\	'graphql': ['prettier'],
-					\	'latex': ['proselint'],
-					\}
-		let g:ale_javascript_prettier_use_local_config = 1
-		let g:airline#extensions#ale#enabled = 1
-	" }}}
-	" Plugin: shougo/deoplete.vim - {{{2
-		if has('nvim')
-			" Enable deoplete on startup
-			let g:deoplete#enable_at_startup = 1
-		endif
-		" Disable deoplete when in multi cursor mode
-		function! Multiple_cursors_before()
-			let b:deoplete_disable_auto_complete = 1
-		endfunction
-		function! Multiple_cursors_after()
-			let b:deoplete_disable_auto_complete = 0
-		endfunction
-		let g:deoplete#sources#go#gocode_binary = '/home/blb/go/bin/gocode'
-	" }}}
-	" Plugin: junegunn/fzf.vim - {{{2
-		let g:fzf_layout = { 'down': '~100%' }
-	" }}}
-	" Plugin: vim-airline/vim-airline - {{{2
-		" Disable showing tabs in the tabline. This will ensure that the buffers are
-		" what is shown in the tabline at all times.
-		let g:airline#extensions#tabline#show_tabs = 0
-		" Enable powerline fonts.
-		let g:airline_powerline_fonts = 1
-	" }}}
-	" Plugin: plasticboy/vim-markdown - {{{2
-		" Disable folding
-		let g:vim_markdown_folding_disabled = 1
-		" Auto shrink the TOC, so that it won't take up 50% of the screen
-		let g:vim_markdown_toc_autofit = 1
-	" }}}
-	" Plugin: fatih/vim-go - {{{2
-		" Set gopath and gobin
-		let $GOPATH=getcwd()
-		let $GOBIN='/home/blb/go/bin'
-		" Run goimports when running gofmt
-		let g:go_fmt_command = "goimports"
-		" Enable syntax highlighting per default
-		let g:go_highlight_types = 1
-		let g:go_highlight_fields = 1
-		let g:go_highlight_functions = 1
-		let g:go_highlight_methods = 1
-		let g:go_highlight_structs = 1
-		let g:go_highlight_operators = 1
-		let g:go_highlight_build_constraints = 1
-		let g:go_highlight_extra_types = 1
-		" Show the progress when running :GoCoverage
-		let g:go_echo_command_info = 1
-		" Show type information
-		" let g:go_auto_type_info = 1
-		" Highlight variable uses
-		" let g:go_auto_sameids = 1
-		" Fix for location list when vim-go is used together with Syntastic
-		let g:go_list_type = "quickfix"
-		" Add the failing test name to the output of :GoTest
-		let g:go_test_show_name = 1
-		" gometalinter configuration
-		let g:go_metalinter_command = "golangci-lint"
-		let g:go_metalinter_deadline = "5s"
-		let g:go_metalinter_enabled = [
-					\ 'deadcode',
-					\ 'errcheck',
-					\ 'gosimple',
-					\ 'golint',
-					\ 'ineffassign',
-					\ 'govet',
-					\ 'unused',
-					\ 'staticcheck',
-					\ 'structcheck',
-					\ 'vetshadow'
-					\]
-		" Set whether the JSON tags should be snakecase or camelcase.
-		let g:go_addtags_transform = "camelcase"
-	" }}}
-	" Plugin: lervag/vimtex - {{{2
-		let g:vimtex_view_method = 'zathura'
-	" }}}
+" Plugin: w0rp/ale - {{{2
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+			\	'javascript': ['prettier', 'eslint'],
+			\	'typescript': ['prettier', 'eslint'],
+			\	'vue': ['prettier', 'eslint'],
+			\	'html': ['prettier', 'eslint'],
+			\	'css': ['prettier'],
+			\	'less': ['prettier'],
+			\	'scss': ['prettier'],
+			\	'json': ['prettier'],
+			\	'yaml': ['prettier'],
+			\	'graphql': ['prettier'],
+			\	'latex': ['proselint'],
+			\}
+let g:ale_javascript_prettier_use_local_config = 1
+let g:airline#extensions#ale#enabled = 1
+" }}}
+" Plugin: shougo/deoplete.vim - {{{2
+if has('nvim')
+	" Enable deoplete on startup
+	let g:deoplete#enable_at_startup = 1
+endif
+" Disable deoplete when in multi cursor mode
+function! Multiple_cursors_before()
+	let b:deoplete_disable_auto_complete = 1
+endfunction
+function! Multiple_cursors_after()
+	let b:deoplete_disable_auto_complete = 0
+endfunction
+let g:deoplete#sources#go#gocode_binary = '/home/blb/go/bin/gocode'
+" }}}
+" Plugin: junegunn/fzf.vim - {{{2
+let g:fzf_layout = { 'down': '~100%' }
+" }}}
+" Plugin: vim-airline/vim-airline - {{{2
+" Disable showing tabs in the tabline. This will ensure that the buffers are
+" what is shown in the tabline at all times.
+let g:airline#extensions#tabline#show_tabs = 0
+" Enable powerline fonts.
+let g:airline_powerline_fonts = 1
+" }}}
+" Plugin: plasticboy/vim-markdown - {{{2
+" Disable folding
+let g:vim_markdown_folding_disabled = 1
+" Auto shrink the TOC, so that it won't take up 50% of the screen
+let g:vim_markdown_toc_autofit = 1
+" }}}
+" Plugin: fatih/vim-go - {{{2
+" Set gopath and gobin
+let $GOPATH=getcwd()
+let $GOBIN='/home/blb/go/bin'
+" Run goimports when running gofmt
+let g:go_fmt_command = "goimports"
+" Enable syntax highlighting per default
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+" Show the progress when running :GoCoverage
+let g:go_echo_command_info = 1
+" Show type information
+" let g:go_auto_type_info = 1
+" Highlight variable uses
+" let g:go_auto_sameids = 1
+" Fix for location list when vim-go is used together with Syntastic
+let g:go_list_type = "quickfix"
+" Add the failing test name to the output of :GoTest
+let g:go_test_show_name = 1
+" gometalinter configuration
+let g:go_metalinter_command = "golangci-lint"
+let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_enabled = [
+			\ 'deadcode',
+			\ 'errcheck',
+			\ 'gosimple',
+			\ 'golint',
+			\ 'ineffassign',
+			\ 'govet',
+			\ 'unused',
+			\ 'staticcheck',
+			\ 'structcheck',
+			\ 'vetshadow'
+			\]
+" Set whether the JSON tags should be snakecase or camelcase.
+let g:go_addtags_transform = "camelcase"
+" }}}
+" Plugin: lervag/vimtex - {{{2
+let g:vimtex_view_method = 'zathura'
+" }}}
 " }}}
 " Theme - {{{
-	" Nord - {{{2
-		if exists('+termguicolors')
-			let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-			let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-			set termguicolors
-		endif
-		let g:nord_italic = 1
-		let g:nord_underline = 1
-		let g:nord_italic_comments = 1
-		let g:nord_comment_brightness = 20
-		let g:nord_uniform_diff_background = 1
-		let g:nord_cursor_line_number_background = 1
-		colorscheme nord
-	" }}}
+" Nord - {{{2
+if exists('+termguicolors')
+	let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+	set termguicolors
+endif
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_italic_comments = 1
+let g:nord_comment_brightness = 20
+let g:nord_uniform_diff_background = 1
+let g:nord_cursor_line_number_background = 1
+colorscheme nord
+" }}}
 " }}}
 
 
@@ -376,7 +374,4 @@ function! ToggleSpellLang()
 endfunction
 nnoremap <F1> :setlocal spell!<CR> " toggle spell on or off
 nnoremap <F2> :call ToggleSpellLang()<CR> " toggle language
-
-vnoremap <leader>e ctmp<esc>Otmp:=<esc>p:%s/tmp//g<left><left>
-
 

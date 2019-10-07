@@ -269,14 +269,10 @@ exec --no-startup-id betterlockscreen -w
 bindsym $mod+shift+x exec betterlockscreen -l blur
 exec_always --no-startup-id $HOME/.config/scripts/xautolock.sh
 
-# Start compton compositor (for transparent)
-#exec_always --no-startup-id compton -f -D 2 &
 
-# exec_always --no-startup-id killall dunst
-# exec_always --no-startup-id dunst &
+exec_always --no-startup-id killall dunst
+exec_always --no-startup-id dunst &
 
-# Display bars
-exec --no-startup-id $HOME/.config/polybar/launch.sh
 
 
 set $color  #FF9988

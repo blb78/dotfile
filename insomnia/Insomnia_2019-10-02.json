@@ -1,755 +1,755 @@
 {
-  "_type": "export",
-  "__export_format": 4,
-  "__export_date": "2019-10-02T16:16:28.020Z",
-  "__export_source": "insomnia.desktop.app:v6.6.2",
-  "resources": [
-    {
-      "_id": "req_b281e1c0f1cc427f9bc1b579a5d48956",
-      "authentication": {},
-      "body": {
-        "mimeType": "application/json",
-        "text": "{\"owner\":\"5a269c2c84ca912fb5099070\",\"title\":\"Devoir de test\",\"statement\":\"<p>ceci est un test</p>\",\"document\":\"/f2205395-5f83-45ce-b27c-21ba16d3e241/5_KPI_pour_5_rôles.pdf\",\"expected\":\"<p>Un document pour le test est attendu</p>\",\"lifetime\":\"3123h\",\"createdAt\":\"2019-08-08T08:28:04.018Z\",\"updatedAt\":\"2019-08-20T12:42:18.367Z\"}"
-      },
-      "created": 1566312821932,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_f7bbfaba0d6149ff85b8c54c94101893",
-          "name": "Content-Type",
-          "value": "application/json"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1566312821932,
-      "method": "POST",
-      "modified": 1566312890776,
-      "name": "/homeworks/subjects",
-      "parameters": [],
-      "parentId": "fld_dec6de4841814505b8b2775316a7bea7",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "",
-      "_type": "request"
-    },
-    {
-      "_id": "fld_dec6de4841814505b8b2775316a7bea7",
-      "created": 1566312796813,
-      "description": "",
-      "environment": {},
-      "environmentPropertyOrder": null,
-      "metaSortKey": -1566312796813,
-      "modified": 1566312796813,
-      "name": "THOT",
-      "parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
-      "_type": "request_group"
-    },
-    {
-      "_id": "wrk_f3504745b1a4422daf39e5817c1f8554",
-      "created": 1559741648070,
-      "description": "",
-      "modified": 1559741648070,
-      "name": "skillogs",
-      "parentId": null,
-      "_type": "workspace"
-    },
-    {
-      "_id": "req_493d713fac4540a494296275d1fe7827",
-      "authentication": {},
-      "body": {},
-      "created": 1567082540720,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_384b468a9c79474f991dbefeb1cb2e65",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1567082540720,
-      "method": "DELETE",
-      "modified": 1567082920971,
-      "name": "/promotions/id",
-      "parameters": [],
-      "parentId": "fld_d0db99f5dd784c30be7345f7b9955e44",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8082/promotions/01e210fc-e109-4c3f-8c4a-14759d2dd551",
-      "_type": "request"
-    },
-    {
-      "_id": "fld_d0db99f5dd784c30be7345f7b9955e44",
-      "created": 1565774369579,
-      "description": "",
-      "environment": {},
-      "environmentPropertyOrder": null,
-      "metaSortKey": -1565774369579,
-      "modified": 1565774369579,
-      "name": "PROMOTION",
-      "parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
-      "_type": "request_group"
-    },
-    {
-      "_id": "req_0ed46d976e3a4cc5a4df50aa32061d0b",
-      "authentication": {},
-      "body": {},
-      "created": 1566232728511,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_8d755b5bf3124cfcac5b5971e283818a",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1566232728511,
-      "method": "GET",
-      "modified": 1566234041392,
-      "name": "/promotions/id",
-      "parameters": [],
-      "parentId": "fld_d0db99f5dd784c30be7345f7b9955e44",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8086/promotions/e2bd9ce2-e80f-456e-8c45-b284f74bfaa0",
-      "_type": "request"
-    },
-    {
-      "_id": "req_00c58f6a07bd44208bddcdf72714802f",
-      "authentication": {},
-      "body": {
-        "mimeType": "application/json",
-        "text": "{\"Name\":\"AAAAAAAA\",\"cursus\":{\"id\":\"c92a7e1c-0135-4d24-8e3a-88ed8543626a\"},\"trainingEngineer\":{\"id\":\"5ae23db7a63dd9058cfef724\"},\"begin\": \"2019-02-05T13:46:04.587Z\",\"end\":\"2020-02-05T13:46:04.587Z\"}"
-      },
-      "created": 1565774428644,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_0753c959cb26433187089de801a591c7",
-          "name": "Content-Type",
-          "value": "application/json"
-        },
-        {
-          "id": "pair_ae423231c8c74f1c9f5674487ab16cde",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1565774428644,
-      "method": "POST",
-      "modified": 1566393096263,
-      "name": "/promotions",
-      "parameters": [],
-      "parentId": "fld_d0db99f5dd784c30be7345f7b9955e44",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8086/promotions",
-      "_type": "request"
-    },
-    {
-      "_id": "req_5ace682a1a6045b088dfdbe4bd72d9c7",
-      "authentication": {},
-      "body": {},
-      "created": 1565774383019,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_7de2140a96bb4375aaad2a43cb79e3c2",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1565774383019,
-      "method": "GET",
-      "modified": 1567082352608,
-      "name": "/promotions",
-      "parameters": [],
-      "parentId": "fld_d0db99f5dd784c30be7345f7b9955e44",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8082/promotions",
-      "_type": "request"
-    },
-    {
-      "_id": "req_ddadd791addc41c08f07319aeb8c9c1d",
-      "authentication": {},
-      "body": {},
-      "created": 1567082167191,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_7abf53b989034a30b27a1218651be768",
-          "name": "Authorization",
-          "value": "{{ student_token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1567082167192,
-      "method": "GET",
-      "modified": 1567082274880,
-      "name": "/cursus/me",
-      "parameters": [],
-      "parentId": "fld_be4d68f502db4ffe91cc4fa930ac8461",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8082/cursus/me",
-      "_type": "request"
-    },
-    {
-      "_id": "fld_be4d68f502db4ffe91cc4fa930ac8461",
-      "created": 1560344024285,
-      "description": "",
-      "environment": {},
-      "environmentPropertyOrder": null,
-      "metaSortKey": -1560344024286,
-      "modified": 1560344024285,
-      "name": "CURSUS",
-      "parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
-      "_type": "request_group"
-    },
-    {
-      "_id": "req_f0fcb384a4f04a42b7a46b5d4a6da307",
-      "authentication": {},
-      "body": {},
-      "created": 1565770898073,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_1faf72a7661d45b4aa277b996f49340c",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1565770898073,
-      "method": "GET",
-      "modified": 1565793680794,
-      "name": "/cursus/id",
-      "parameters": [],
-      "parentId": "fld_be4d68f502db4ffe91cc4fa930ac8461",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8086/cursus/931cd8f3-9cf8-44ed-b7a5-e5e3c01b5469",
-      "_type": "request"
-    },
-    {
-      "_id": "req_b8f0d15dc6e149378895e5709feffb5f",
-      "authentication": {},
-      "body": {},
-      "created": 1560419504286,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_e27e5273bd8e43a09ec833683dbb0f41",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1560419504286,
-      "method": "GET",
-      "modified": 1560419522271,
-      "name": "/cursus",
-      "parameters": [],
-      "parentId": "fld_be4d68f502db4ffe91cc4fa930ac8461",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8086/cursus",
-      "_type": "request"
-    },
-    {
-      "_id": "req_e0f164a453214fbcb8f57a3a50bb1d88",
-      "authentication": {},
-      "body": {},
-      "created": 1560629989408,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_8d5ced81aca4438fb6d241363e326833",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1560381773508,
-      "method": "DELETE",
-      "modified": 1566392695722,
-      "name": "/cursus/id",
-      "parameters": [],
-      "parentId": "fld_be4d68f502db4ffe91cc4fa930ac8461",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8086/cursus/aa03a02d-7b54-4dcd-95f0-f52a0ddcaa59",
-      "_type": "request"
-    },
-    {
-      "_id": "req_404d2db351694ba8b3bd1344072e1848",
-      "authentication": {},
-      "body": {
-        "mimeType": "application/json",
-        "text": "{\"name\":\"CURSUS DE LA MORT\",\"duration\":100,\"workHours\":100,\"promotions\":[{\"id\":\"5d34d873-d049-47a1-9ab2-592c31b8bde6\"}]}"
-      },
-      "created": 1560344042729,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_d4c5a025fd0646fdb1ac7900c1d074e9",
-          "name": "Content-Type",
-          "value": "application/json"
-        },
-        {
-          "id": "pair_304df8d3eb4a44b6b4e2140b93076f32",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1560344042730,
-      "method": "POST",
-      "modified": 1566377002572,
-      "name": "/cursus",
-      "parameters": [],
-      "parentId": "fld_be4d68f502db4ffe91cc4fa930ac8461",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8086/cursus",
-      "_type": "request"
-    },
-    {
-      "_id": "req_834a3e141d9b42f6bcccf4174786ab44",
-      "authentication": {},
-      "body": {
-        "mimeType": "application/json",
-        "text": "{\"email\":\"admin@skillogs.com\",\"password\":\"L*rx3=WQvgc-bB&9\"}"
-      },
-      "created": 1559741812910,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_421eb93916b14dc0ad7706b80a5f163e",
-          "name": "Content-Type",
-          "value": "application/json"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1559741812911,
-      "method": "POST",
-      "modified": 1559914081093,
-      "name": "dev admin",
-      "parameters": [],
-      "parentId": "fld_fd60a305c4d64476a37d10ff413054fb",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "https://dev.api.skillogs.com/auth/token",
-      "_type": "request"
-    },
-    {
-      "_id": "fld_fd60a305c4d64476a37d10ff413054fb",
-      "created": 1559910057590,
-      "description": "",
-      "environment": {},
-      "environmentPropertyOrder": null,
-      "metaSortKey": -1559910057590,
-      "modified": 1559910057590,
-      "name": "AUTH",
-      "parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
-      "_type": "request_group"
-    },
-    {
-      "_id": "req_a01134b3900842ae9f11046bb2e9f403",
-      "authentication": {},
-      "body": {
-        "mimeType": "application/json",
-        "text": "{\"email\":\"blb78@protonmail.com\",\"password\":\"password\"}"
-      },
-      "created": 1562594646828,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_421eb93916b14dc0ad7706b80a5f163e",
-          "name": "Content-Type",
-          "value": "application/json"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1559741812861,
-      "method": "POST",
-      "modified": 1562594729579,
-      "name": "dev student",
-      "parameters": [],
-      "parentId": "fld_fd60a305c4d64476a37d10ff413054fb",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "https://dev.api.skillogs.com/auth/token",
-      "_type": "request"
-    },
-    {
-      "_id": "req_8be657b16aab4e0fb937b036a6d52104",
-      "authentication": {},
-      "body": {
-        "mimeType": "application/json",
-        "text": "{\"id\":\"846f7406-770e-43ca-ac47-4b8d852569b2\",\"label\":\"super label\",\"description\":\"...\"}"
-      },
-      "created": 1561974016580,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_b8ec6e5674d640d8958acffb1efd0fec",
-          "name": "Content-Type",
-          "value": "application/json"
-        },
-        {
-          "id": "pair_412064233f454427bed4fdeebf4465aa",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1561974016580,
-      "method": "PUT",
-      "modified": 1561974216139,
-      "name": "/blocks/id",
-      "parameters": [],
-      "parentId": "fld_ec20d13c876a43c5af96935e59060667",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8095/blocks/846f7406-770e-43ca-ac47-4b8d852569b2",
-      "_type": "request"
-    },
-    {
-      "_id": "fld_ec20d13c876a43c5af96935e59060667",
-      "created": 1559910037288,
-      "description": "",
-      "environment": {},
-      "environmentPropertyOrder": null,
-      "metaSortKey": -1559910037288,
-      "modified": 1559910037288,
-      "name": "BLOCS",
-      "parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
-      "_type": "request_group"
-    },
-    {
-      "_id": "req_5a8c7e1d875b4b19915821f79d803016",
-      "authentication": {},
-      "body": {},
-      "created": 1560633037798,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_0e8d8bec47164c46ae2dc7e908e75547",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1560633037798,
-      "method": "DELETE",
-      "modified": 1560633080997,
-      "name": "/blocks/id",
-      "parameters": [],
-      "parentId": "fld_ec20d13c876a43c5af96935e59060667",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8095/blocks/8b4ada96-f731-40b4-a27e-3acb143f010d",
-      "_type": "request"
-    },
-    {
-      "_id": "req_48f110d23cc24bb3b275af36ae618d85",
-      "authentication": {},
-      "body": {},
-      "created": 1559742337974,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_7aeb373d52964eef920e1194321a1cc6",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1559909798842.5,
-      "method": "GET",
-      "modified": 1562594388896,
-      "name": "/blocs",
-      "parameters": [],
-      "parentId": "fld_ec20d13c876a43c5af96935e59060667",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8095/blocks",
-      "_type": "request"
-    },
-    {
-      "_id": "req_9c218265bbda49bb8524414a44f409ff",
-      "authentication": {},
-      "body": {},
-      "created": 1559745053896,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_64d8422915674ff0b274cace0637f87a",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1559909798817.5,
-      "method": "GET",
-      "modified": 1561974051347,
-      "name": "/blocks/block_1",
-      "parameters": [],
-      "parentId": "fld_ec20d13c876a43c5af96935e59060667",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8095/blocks/846f7406-770e-43ca-ac47-4b8d852569b2",
-      "_type": "request"
-    },
-    {
-      "_id": "req_1c44f513b17c4190901ec0b1a1a69693",
-      "authentication": {},
-      "body": {
-        "mimeType": "application/json",
-        "text": "{\"label\":\"hyper label\",\"description\":\"...\"}"
-      },
-      "created": 1559909560297,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_171a79a2257043d686bfe7e16faea62e",
-          "name": "Content-Type",
-          "value": "application/json"
-        },
-        {
-          "id": "pair_8486125af532430cb2b079a46859cfcd",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1559909798792.5,
-      "method": "POST",
-      "modified": 1561974270622,
-      "name": "/blocks",
-      "parameters": [],
-      "parentId": "fld_ec20d13c876a43c5af96935e59060667",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8095/blocks",
-      "_type": "request"
-    },
-    {
-      "_id": "req_ef47833e3c9947cbb55198af8c52d373",
-      "authentication": {},
-      "body": {},
-      "created": 1559745409552,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_7aa93de68f734ff9872cf6f18a9295cd",
-          "name": "Authorization",
-          "value": "{{ token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1559745409552,
-      "method": "GET",
-      "modified": 1562595995466,
-      "name": "skill",
-      "parameters": [],
-      "parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8095/skill/skills/03aa0c5e-6a68-48e0-9062-f340204f0633",
-      "_type": "request"
-    },
-    {
-      "_id": "req_185afd6982f94aa3ae15d694d2acfa01",
-      "authentication": {},
-      "body": {},
-      "created": 1562594972509,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_634c1f4dc84443529cabc870621525d0",
-          "name": "Authorization",
-          "value": "{{ student_token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1559745409502,
-      "method": "GET",
-      "modified": 1562594996224,
-      "name": "/progress/skillID",
-      "parameters": [],
-      "parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8095/progress/03aa0c5e-6a68-48e0-9062-f340204f0633",
-      "_type": "request"
-    },
-    {
-      "_id": "req_aa8c4e9bf6e74b248c940408b3588226",
-      "authentication": {},
-      "body": {},
-      "created": 1562596250430,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_634c1f4dc84443529cabc870621525d0",
-          "name": "Authorization",
-          "value": "{{ student_token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1559743611206.5,
-      "method": "GET",
-      "modified": 1562771741244,
-      "name": "/progress/skillID (Copy)",
-      "parameters": [],
-      "parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8095/progress/de64a8ec-a3e1-4f81-8071-3019cc359710",
-      "_type": "request"
-    },
-    {
-      "_id": "req_8aaf5828b1b74feca1cf161a9e4b0cd1",
-      "authentication": {},
-      "body": {},
-      "created": 1562766266141,
-      "description": "",
-      "headers": [
-        {
-          "id": "pair_634c1f4dc84443529cabc870621525d0",
-          "name": "Authorization",
-          "value": "{{ student_token  }}"
-        }
-      ],
-      "isPrivate": false,
-      "metaSortKey": -1559742712058.75,
-      "method": "GET",
-      "modified": 1562766274387,
-      "name": "/progress/skillID (Copy) (Copy)",
-      "parameters": [],
-      "parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingSendCookies": true,
-      "settingStoreCookies": true,
-      "url": "http://localhost:8095/progress?ids=bec76ad1-fa5e-4c8d-b060-b64b5bbf083c,877007ba-af8b-46bf-bc88-ea1b22fe9234,fddae8f4-6649-4572-9775-4e72d520a124,f47e2a6c-bbc5-4d54-a22f-081e26aa80bd,22e120f8-b883-4aff-bc05-b9e356826806,aa2098a7-a320-4ccd-8de2-2421c40ff34d,bec76ad1-fa5e-4c8d-b060-b64b5bbf083c,de64a8ec-a3e1-4f81-8071-3019cc359710,aa2098a7-a320-4ccd-8de2-2421c40ff34d,877007ba-af8b-46bf-bc88-ea1b22fe9234,5962b700-26a2-49c4-8fbc-a7581dcbae82,bec76ad1-fa5e-4c8d-b060-b64b5bbf083c,e0bacfe6-cdb6-406b-bca0-9947aa518c69,c131de68-1f58-472d-9582-faf1a9d…2d-10a1-47c7-9d36-87e405469710,da467c9b-6eaa-480c-8118-3413f451c963,d4b0ca0e-927e-4c87-a663-290bb69ea750,d20a1698-7b2b-467d-b7fe-0592ee229944,cb1ec891-cf9f-4a89-b454-9267fba05ccb,c418a5e2-fa3b-4c25-b515-4fa3dc554601,bd980ecd-377b-46b6-a49d-66e18d7ea66e,b87c3da3-3c5f-4d49-9fcc-7941f1c014ae,b849dc3a-059a-4951-8145-9dc6e7f166ff,b3c71df4-0e2e-4978-8a83-e22d53eede15,b157cfe1-5d01-4d12-b277-806d6d0b4d2e,a5c33658-a8e8-4134-9a23-ff1e35deec4a,a23971d6-0181-416a-a33d-653b18d117b8,9fad2913-e280-40fd-b503-17f8181bba3e",
-      "_type": "request"
-    },
-    {
-      "_id": "env_2b351da7c88b5dbc1f71c113ccbf339cd09e468c",
-      "color": null,
-      "created": 1559741648173,
-      "data": {},
-      "dataPropertyOrder": null,
-      "isPrivate": false,
-      "metaSortKey": 1559741648173,
-      "modified": 1559741648173,
-      "name": "Base Environment",
-      "parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
-      "_type": "environment"
-    },
-    {
-      "_id": "jar_2b351da7c88b5dbc1f71c113ccbf339cd09e468c",
-      "cookies": [
-        {
-          "creation": "2019-06-05T13:38:04.797Z",
-          "domain": "dev.api.skillogs.com",
-          "hostOnly": true,
-          "id": "9121131239929596",
-          "key": "CCADCBALANCEID",
-          "lastAccessed": "2019-08-29T12:36:17.404Z",
-          "path": "/",
-          "value": "1o5tp_jltmy0ymomgewiha"
-        }
-      ],
-      "created": 1559741648183,
-      "modified": 1567082177405,
-      "name": "Default Jar",
-      "parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
-      "_type": "cookie_jar"
-    },
-    {
-      "_id": "env_f83a4690e5cd40edbeeb54505b02306f",
-      "color": "#7d69cb",
-      "created": 1559741905224,
-      "data": {
-        "student_token": "Bearer {% response 'body', 'req_a01134b3900842ae9f11046bb2e9f403', 'b64::JC50b2tlbg==::46b', 'never' %}",
-        "token": "Bearer {% response 'body', 'req_834a3e141d9b42f6bcccf4174786ab44', 'b64::JC50b2tlbg==::46b', 'never' %}"
-      },
-      "dataPropertyOrder": { "&": ["token", "student_token"] },
-      "isPrivate": false,
-      "metaSortKey": 1559741905224,
-      "modified": 1562594934360,
-      "name": "Skillogs dev",
-      "parentId": "env_2b351da7c88b5dbc1f71c113ccbf339cd09e468c",
-      "_type": "environment"
-    }
-  ]
+	"_type": "export",
+	"__export_format": 4,
+	"__export_date": "2019-10-02T16:16:28.020Z",
+	"__export_source": "insomnia.desktop.app:v6.6.2",
+	"resources": [
+		{
+			"_id": "req_b281e1c0f1cc427f9bc1b579a5d48956",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\"owner\":\"5a269c2c84ca912fb5099070\",\"title\":\"Devoir de test\",\"statement\":\"<p>ceci est un test</p>\",\"document\":\"/f2205395-5f83-45ce-b27c-21ba16d3e241/5_KPI_pour_5_rôles.pdf\",\"expected\":\"<p>Un document pour le test est attendu</p>\",\"lifetime\":\"3123h\",\"createdAt\":\"2019-08-08T08:28:04.018Z\",\"updatedAt\":\"2019-08-20T12:42:18.367Z\"}"
+			},
+			"created": 1566312821932,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f7bbfaba0d6149ff85b8c54c94101893",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1566312821932,
+			"method": "POST",
+			"modified": 1566312890776,
+			"name": "/homeworks/subjects",
+			"parameters": [],
+			"parentId": "fld_dec6de4841814505b8b2775316a7bea7",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_dec6de4841814505b8b2775316a7bea7",
+			"created": 1566312796813,
+			"description": "",
+			"environment": {},
+			"environmentPropertyOrder": null,
+			"metaSortKey": -1566312796813,
+			"modified": 1566312796813,
+			"name": "THOT",
+			"parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
+			"_type": "request_group"
+		},
+		{
+			"_id": "wrk_f3504745b1a4422daf39e5817c1f8554",
+			"created": 1559741648070,
+			"description": "",
+			"modified": 1559741648070,
+			"name": "skillogs",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "req_493d713fac4540a494296275d1fe7827",
+			"authentication": {},
+			"body": {},
+			"created": 1567082540720,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_384b468a9c79474f991dbefeb1cb2e65",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1567082540720,
+			"method": "DELETE",
+			"modified": 1567082920971,
+			"name": "/promotions/id",
+			"parameters": [],
+			"parentId": "fld_d0db99f5dd784c30be7345f7b9955e44",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8082/promotions/01e210fc-e109-4c3f-8c4a-14759d2dd551",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_d0db99f5dd784c30be7345f7b9955e44",
+			"created": 1565774369579,
+			"description": "",
+			"environment": {},
+			"environmentPropertyOrder": null,
+			"metaSortKey": -1565774369579,
+			"modified": 1565774369579,
+			"name": "PROMOTION",
+			"parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_0ed46d976e3a4cc5a4df50aa32061d0b",
+			"authentication": {},
+			"body": {},
+			"created": 1566232728511,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_8d755b5bf3124cfcac5b5971e283818a",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1566232728511,
+			"method": "GET",
+			"modified": 1566234041392,
+			"name": "/promotions/id",
+			"parameters": [],
+			"parentId": "fld_d0db99f5dd784c30be7345f7b9955e44",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8086/promotions/e2bd9ce2-e80f-456e-8c45-b284f74bfaa0",
+			"_type": "request"
+		},
+		{
+			"_id": "req_00c58f6a07bd44208bddcdf72714802f",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\"Name\":\"AAAAAAAA\",\"cursus\":{\"id\":\"c92a7e1c-0135-4d24-8e3a-88ed8543626a\"},\"trainingEngineer\":{\"id\":\"5ae23db7a63dd9058cfef724\"},\"begin\": \"2019-02-05T13:46:04.587Z\",\"end\":\"2020-02-05T13:46:04.587Z\"}"
+			},
+			"created": 1565774428644,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_0753c959cb26433187089de801a591c7",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_ae423231c8c74f1c9f5674487ab16cde",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1565774428644,
+			"method": "POST",
+			"modified": 1566393096263,
+			"name": "/promotions",
+			"parameters": [],
+			"parentId": "fld_d0db99f5dd784c30be7345f7b9955e44",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8086/promotions",
+			"_type": "request"
+		},
+		{
+			"_id": "req_5ace682a1a6045b088dfdbe4bd72d9c7",
+			"authentication": {},
+			"body": {},
+			"created": 1565774383019,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7de2140a96bb4375aaad2a43cb79e3c2",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1565774383019,
+			"method": "GET",
+			"modified": 1567082352608,
+			"name": "/promotions",
+			"parameters": [],
+			"parentId": "fld_d0db99f5dd784c30be7345f7b9955e44",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8082/promotions",
+			"_type": "request"
+		},
+		{
+			"_id": "req_ddadd791addc41c08f07319aeb8c9c1d",
+			"authentication": {},
+			"body": {},
+			"created": 1567082167191,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7abf53b989034a30b27a1218651be768",
+					"name": "Authorization",
+					"value": "{{ student_token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1567082167192,
+			"method": "GET",
+			"modified": 1567082274880,
+			"name": "/cursus/me",
+			"parameters": [],
+			"parentId": "fld_be4d68f502db4ffe91cc4fa930ac8461",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8082/cursus/me",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_be4d68f502db4ffe91cc4fa930ac8461",
+			"created": 1560344024285,
+			"description": "",
+			"environment": {},
+			"environmentPropertyOrder": null,
+			"metaSortKey": -1560344024286,
+			"modified": 1560344024285,
+			"name": "CURSUS",
+			"parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_f0fcb384a4f04a42b7a46b5d4a6da307",
+			"authentication": {},
+			"body": {},
+			"created": 1565770898073,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_1faf72a7661d45b4aa277b996f49340c",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1565770898073,
+			"method": "GET",
+			"modified": 1565793680794,
+			"name": "/cursus/id",
+			"parameters": [],
+			"parentId": "fld_be4d68f502db4ffe91cc4fa930ac8461",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8086/cursus/931cd8f3-9cf8-44ed-b7a5-e5e3c01b5469",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b8f0d15dc6e149378895e5709feffb5f",
+			"authentication": {},
+			"body": {},
+			"created": 1560419504286,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_e27e5273bd8e43a09ec833683dbb0f41",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1560419504286,
+			"method": "GET",
+			"modified": 1560419522271,
+			"name": "/cursus",
+			"parameters": [],
+			"parentId": "fld_be4d68f502db4ffe91cc4fa930ac8461",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8086/cursus",
+			"_type": "request"
+		},
+		{
+			"_id": "req_e0f164a453214fbcb8f57a3a50bb1d88",
+			"authentication": {},
+			"body": {},
+			"created": 1560629989408,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_8d5ced81aca4438fb6d241363e326833",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1560381773508,
+			"method": "DELETE",
+			"modified": 1566392695722,
+			"name": "/cursus/id",
+			"parameters": [],
+			"parentId": "fld_be4d68f502db4ffe91cc4fa930ac8461",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8086/cursus/aa03a02d-7b54-4dcd-95f0-f52a0ddcaa59",
+			"_type": "request"
+		},
+		{
+			"_id": "req_404d2db351694ba8b3bd1344072e1848",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\"name\":\"CURSUS DE LA MORT\",\"duration\":100,\"workHours\":100,\"promotions\":[{\"id\":\"5d34d873-d049-47a1-9ab2-592c31b8bde6\"}]}"
+			},
+			"created": 1560344042729,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d4c5a025fd0646fdb1ac7900c1d074e9",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_304df8d3eb4a44b6b4e2140b93076f32",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1560344042730,
+			"method": "POST",
+			"modified": 1566377002572,
+			"name": "/cursus",
+			"parameters": [],
+			"parentId": "fld_be4d68f502db4ffe91cc4fa930ac8461",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8086/cursus",
+			"_type": "request"
+		},
+		{
+			"_id": "req_834a3e141d9b42f6bcccf4174786ab44",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\"email\":\"admin@skillogs.com\",\"password\":\"L*rx3=WQvgc-bB&9\"}"
+			},
+			"created": 1559741812910,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_421eb93916b14dc0ad7706b80a5f163e",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1559741812911,
+			"method": "POST",
+			"modified": 1559914081093,
+			"name": "dev admin",
+			"parameters": [],
+			"parentId": "fld_fd60a305c4d64476a37d10ff413054fb",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://dev.api.skillogs.com/auth/token",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_fd60a305c4d64476a37d10ff413054fb",
+			"created": 1559910057590,
+			"description": "",
+			"environment": {},
+			"environmentPropertyOrder": null,
+			"metaSortKey": -1559910057590,
+			"modified": 1559910057590,
+			"name": "AUTH",
+			"parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_a01134b3900842ae9f11046bb2e9f403",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\"email\":\"blb78@protonmail.com\",\"password\":\"password\"}"
+			},
+			"created": 1562594646828,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_421eb93916b14dc0ad7706b80a5f163e",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1559741812861,
+			"method": "POST",
+			"modified": 1562594729579,
+			"name": "dev student",
+			"parameters": [],
+			"parentId": "fld_fd60a305c4d64476a37d10ff413054fb",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://dev.api.skillogs.com/auth/token",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8be657b16aab4e0fb937b036a6d52104",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\"id\":\"846f7406-770e-43ca-ac47-4b8d852569b2\",\"label\":\"super label\",\"description\":\"...\"}"
+			},
+			"created": 1561974016580,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_b8ec6e5674d640d8958acffb1efd0fec",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_412064233f454427bed4fdeebf4465aa",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1561974016580,
+			"method": "PUT",
+			"modified": 1561974216139,
+			"name": "/blocks/id",
+			"parameters": [],
+			"parentId": "fld_ec20d13c876a43c5af96935e59060667",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8095/blocks/846f7406-770e-43ca-ac47-4b8d852569b2",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_ec20d13c876a43c5af96935e59060667",
+			"created": 1559910037288,
+			"description": "",
+			"environment": {},
+			"environmentPropertyOrder": null,
+			"metaSortKey": -1559910037288,
+			"modified": 1559910037288,
+			"name": "BLOCS",
+			"parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_5a8c7e1d875b4b19915821f79d803016",
+			"authentication": {},
+			"body": {},
+			"created": 1560633037798,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_0e8d8bec47164c46ae2dc7e908e75547",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1560633037798,
+			"method": "DELETE",
+			"modified": 1560633080997,
+			"name": "/blocks/id",
+			"parameters": [],
+			"parentId": "fld_ec20d13c876a43c5af96935e59060667",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8095/blocks/8b4ada96-f731-40b4-a27e-3acb143f010d",
+			"_type": "request"
+		},
+		{
+			"_id": "req_48f110d23cc24bb3b275af36ae618d85",
+			"authentication": {},
+			"body": {},
+			"created": 1559742337974,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7aeb373d52964eef920e1194321a1cc6",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1559909798842.5,
+			"method": "GET",
+			"modified": 1562594388896,
+			"name": "/blocs",
+			"parameters": [],
+			"parentId": "fld_ec20d13c876a43c5af96935e59060667",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8095/blocks",
+			"_type": "request"
+		},
+		{
+			"_id": "req_9c218265bbda49bb8524414a44f409ff",
+			"authentication": {},
+			"body": {},
+			"created": 1559745053896,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_64d8422915674ff0b274cace0637f87a",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1559909798817.5,
+			"method": "GET",
+			"modified": 1561974051347,
+			"name": "/blocks/block_1",
+			"parameters": [],
+			"parentId": "fld_ec20d13c876a43c5af96935e59060667",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8095/blocks/846f7406-770e-43ca-ac47-4b8d852569b2",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1c44f513b17c4190901ec0b1a1a69693",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\"label\":\"hyper label\",\"description\":\"...\"}"
+			},
+			"created": 1559909560297,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_171a79a2257043d686bfe7e16faea62e",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_8486125af532430cb2b079a46859cfcd",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1559909798792.5,
+			"method": "POST",
+			"modified": 1561974270622,
+			"name": "/blocks",
+			"parameters": [],
+			"parentId": "fld_ec20d13c876a43c5af96935e59060667",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8095/blocks",
+			"_type": "request"
+		},
+		{
+			"_id": "req_ef47833e3c9947cbb55198af8c52d373",
+			"authentication": {},
+			"body": {},
+			"created": 1559745409552,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7aa93de68f734ff9872cf6f18a9295cd",
+					"name": "Authorization",
+					"value": "{{ token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1559745409552,
+			"method": "GET",
+			"modified": 1562595995466,
+			"name": "skill",
+			"parameters": [],
+			"parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8095/skill/skills/03aa0c5e-6a68-48e0-9062-f340204f0633",
+			"_type": "request"
+		},
+		{
+			"_id": "req_185afd6982f94aa3ae15d694d2acfa01",
+			"authentication": {},
+			"body": {},
+			"created": 1562594972509,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_634c1f4dc84443529cabc870621525d0",
+					"name": "Authorization",
+					"value": "{{ student_token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1559745409502,
+			"method": "GET",
+			"modified": 1562594996224,
+			"name": "/progress/skillID",
+			"parameters": [],
+			"parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8095/progress/03aa0c5e-6a68-48e0-9062-f340204f0633",
+			"_type": "request"
+		},
+		{
+			"_id": "req_aa8c4e9bf6e74b248c940408b3588226",
+			"authentication": {},
+			"body": {},
+			"created": 1562596250430,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_634c1f4dc84443529cabc870621525d0",
+					"name": "Authorization",
+					"value": "{{ student_token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1559743611206.5,
+			"method": "GET",
+			"modified": 1562771741244,
+			"name": "/progress/skillID (Copy)",
+			"parameters": [],
+			"parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8095/progress/de64a8ec-a3e1-4f81-8071-3019cc359710",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8aaf5828b1b74feca1cf161a9e4b0cd1",
+			"authentication": {},
+			"body": {},
+			"created": 1562766266141,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_634c1f4dc84443529cabc870621525d0",
+					"name": "Authorization",
+					"value": "{{ student_token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1559742712058.75,
+			"method": "GET",
+			"modified": 1562766274387,
+			"name": "/progress/skillID (Copy) (Copy)",
+			"parameters": [],
+			"parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8095/progress?ids=bec76ad1-fa5e-4c8d-b060-b64b5bbf083c,877007ba-af8b-46bf-bc88-ea1b22fe9234,fddae8f4-6649-4572-9775-4e72d520a124,f47e2a6c-bbc5-4d54-a22f-081e26aa80bd,22e120f8-b883-4aff-bc05-b9e356826806,aa2098a7-a320-4ccd-8de2-2421c40ff34d,bec76ad1-fa5e-4c8d-b060-b64b5bbf083c,de64a8ec-a3e1-4f81-8071-3019cc359710,aa2098a7-a320-4ccd-8de2-2421c40ff34d,877007ba-af8b-46bf-bc88-ea1b22fe9234,5962b700-26a2-49c4-8fbc-a7581dcbae82,bec76ad1-fa5e-4c8d-b060-b64b5bbf083c,e0bacfe6-cdb6-406b-bca0-9947aa518c69,c131de68-1f58-472d-9582-faf1a9d…2d-10a1-47c7-9d36-87e405469710,da467c9b-6eaa-480c-8118-3413f451c963,d4b0ca0e-927e-4c87-a663-290bb69ea750,d20a1698-7b2b-467d-b7fe-0592ee229944,cb1ec891-cf9f-4a89-b454-9267fba05ccb,c418a5e2-fa3b-4c25-b515-4fa3dc554601,bd980ecd-377b-46b6-a49d-66e18d7ea66e,b87c3da3-3c5f-4d49-9fcc-7941f1c014ae,b849dc3a-059a-4951-8145-9dc6e7f166ff,b3c71df4-0e2e-4978-8a83-e22d53eede15,b157cfe1-5d01-4d12-b277-806d6d0b4d2e,a5c33658-a8e8-4134-9a23-ff1e35deec4a,a23971d6-0181-416a-a33d-653b18d117b8,9fad2913-e280-40fd-b503-17f8181bba3e",
+			"_type": "request"
+		},
+		{
+			"_id": "env_2b351da7c88b5dbc1f71c113ccbf339cd09e468c",
+			"color": null,
+			"created": 1559741648173,
+			"data": {},
+			"dataPropertyOrder": null,
+			"isPrivate": false,
+			"metaSortKey": 1559741648173,
+			"modified": 1559741648173,
+			"name": "Base Environment",
+			"parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_2b351da7c88b5dbc1f71c113ccbf339cd09e468c",
+			"cookies": [
+				{
+					"creation": "2019-06-05T13:38:04.797Z",
+					"domain": "dev.api.skillogs.com",
+					"hostOnly": true,
+					"id": "9121131239929596",
+					"key": "CCADCBALANCEID",
+					"lastAccessed": "2019-08-29T12:36:17.404Z",
+					"path": "/",
+					"value": "1o5tp_jltmy0ymomgewiha"
+				}
+			],
+			"created": 1559741648183,
+			"modified": 1567082177405,
+			"name": "Default Jar",
+			"parentId": "wrk_f3504745b1a4422daf39e5817c1f8554",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "env_f83a4690e5cd40edbeeb54505b02306f",
+			"color": "#7d69cb",
+			"created": 1559741905224,
+			"data": {
+				"student_token": "Bearer {% response 'body', 'req_a01134b3900842ae9f11046bb2e9f403', 'b64::JC50b2tlbg==::46b', 'never' %}",
+				"token": "Bearer {% response 'body', 'req_834a3e141d9b42f6bcccf4174786ab44', 'b64::JC50b2tlbg==::46b', 'never' %}"
+			},
+			"dataPropertyOrder": { "&": ["token", "student_token"] },
+			"isPrivate": false,
+			"metaSortKey": 1559741905224,
+			"modified": 1562594934360,
+			"name": "Skillogs dev",
+			"parentId": "env_2b351da7c88b5dbc1f71c113ccbf339cd09e468c",
+			"_type": "environment"
+		}
+	]
 }
