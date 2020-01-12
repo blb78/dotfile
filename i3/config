@@ -141,7 +141,7 @@ set $ws10 ""
 # Assignation des logiciels à un espace:
 for_window [class="Spotify"] move container to workspace ;workspace 
 for_window [class="Alacritty"] move container to workspace 1;workspace 1
-for_window [class="Firefox"] move container to workspace 2;workspace 2
+for_window [class="firefox"] move container to workspace 2;workspace 2
 for_window [class="Chromium"] move container to workspace 2;workspace 2
 for_window [class="Insomnia"] move container to workspace 9;workspace 9
 
@@ -236,9 +236,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 
 # Pulse Audio controls
 # Killing i3status with SIGUSR1 will trigger an immediate refresh. This works with i3status ≥ v2.7.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% && killall -SIGUSR1 i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 # Spotify related key bindings
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"

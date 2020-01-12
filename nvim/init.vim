@@ -71,16 +71,13 @@
 		Plug 'vim-airline/vim-airline-themes'
 		Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 		Plug 'junegunn/fzf.vim'
-		Plug 'takac/vim-hardtime'
 		" Language support
 		Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go support
 		Plug 'leafgarland/typescript-vim'				" TypeScript syntax highlighting
 		Plug 'pangloss/vim-javascript'					" JavaScript syntax highlighting
-		Plug 'lervag/vimtex'							" LaTeX support
-		Plug 'plasticboy/vim-markdown'					" Markdown syntax highlighting
 		Plug 'storyn26383/vim-vue'						" Vuejs syntax highlighting
 		" Linting code
-		Plug 'https://github.com/w0rp/ale.git'
+		Plug 'dense-analysis/ale'
 		Plug 'eslint/eslint' , { 'do': 'yarn install' }
 
 		Plug 'blb78/nord-vim'
@@ -282,12 +279,6 @@
 		" Enable powerline fonts.
 		let g:airline_powerline_fonts = 1
 	" }}}
-	" Plugin: plasticboy/vim-markdown - {{{2
-		" Disable folding
-		let g:vim_markdown_folding_disabled = 1
-		" Auto shrink the TOC, so that it won't take up 50% of the screen
-		let g:vim_markdown_toc_autofit = 1
-	" }}}
 	" Plugin: fatih/vim-go - {{{2
 		" Set gopath and gobin
 		let $GOPATH=getcwd()
@@ -330,9 +321,6 @@
 					\]
 		" Set whether the JSON tags should be snakecase or camelcase.
 		let g:go_addtags_transform = "camelcase"
-	" }}}
-	" Plugin: lervag/vimtex - {{{2
-		let g:vimtex_view_method = 'zathura'
 	" }}}
 " }}}
 " Theme - {{{
@@ -377,4 +365,4 @@ endfunction
 nnoremap <F1> :setlocal spell!<CR> " toggle spell on or off
 nnoremap <F2> :call ToggleSpellLang()<CR> " toggle language
 
-
+let g:python3_host_prog = '/usr/bin/python3'
