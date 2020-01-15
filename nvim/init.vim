@@ -66,9 +66,10 @@
 	filetype plugin indent on
 	let mapleader = ','
 	let maplocalleader = 'ù'
+	let g:python3_host_prog = '/usr/bin/python3'
 " }}}
 " Plugins - {{{
-	" Plugin: w0rp/ale - {{{2
+	" Plugin: dense-analysis/ale - {{{2
 		let g:ale_sign_error = '⤫'
 		let g:ale_sign_warning = '⚠'
 		let g:ale_fix_on_save = 1
@@ -88,40 +89,37 @@
 		let g:ale_javascript_prettier_use_local_config = 1
 		let g:airline#extensions#ale#enabled = 1
 	" }}}
-" Plugin: shougo/deoplete.vim - {{{2
-if has('nvim')
-	" Enable deoplete on startup
-	let g:deoplete#enable_at_startup = 1
-endif
-" Disable deoplete when in multi cursor mode
-function! Multiple_cursors_before()
-	let b:deoplete_disable_auto_complete = 1
-endfunction
-function! Multiple_cursors_after()
-	let b:deoplete_disable_auto_complete = 0
-endfunction
-let g:deoplete#sources#go#gocode_binary = '/home/blb/go/bin/gocode'
-" }}}
-" Plugin: junegunn/fzf.vim - {{{2
-let g:fzf_layout = { 'down': '~100%' }
-" }}}
-" Plugin: vim-airline/vim-airline - {{{2
-" Disable showing tabs in the tabline. This will ensure that the buffers are
-" what is shown in the tabline at all times.
-let g:airline#extensions#tabline#show_tabs = 0
-" Enable powerline fonts.
-let g:airline_powerline_fonts = 1
-" }}}
-" Plugin: plasticboy/vim-markdown - {{{2
-" Disable folding
-let g:vim_markdown_folding_disabled = 1
-" Auto shrink the TOC, so that it won't take up 50% of the screen
-let g:vim_markdown_toc_autofit = 1
-" }}}
+	" Plugin: shougo/deoplete.vim - {{{2
+		if has('nvim')
+			" Enable deoplete on startup
+			let g:deoplete#enable_at_startup = 1
+		endif
+		" Disable deoplete when in multi cursor mode
+		function! Multiple_cursors_before()
+			let b:deoplete_disable_auto_complete = 1
+		endfunction
+		function! Multiple_cursors_after()
+			let b:deoplete_disable_auto_complete = 0
+		endfunction
+		let g:deoplete#sources#go#gocode_binary = '/home/blb/go/bin/gocode'
+		" }}}
+	" Plugin: junegunn/fzf.vim - {{{2
+		let g:fzf_layout = { 'down': '~100%' }
+	" }}}
+	" Plugin: vim-airline/vim-airline - {{{2
+		" Disable showing tabs in the tabline. This will ensure that the buffers are
+		" what is shown in the tabline at all times.
+		let g:airline#extensions#tabline#show_tabs = 0
+		" Enable powerline fonts.
+		let g:airline_powerline_fonts = 1
+	" }}}
+	" Plugin: plasticboy/vim-markdown - {{{2
+		" Disable folding
+		let g:vim_markdown_folding_disabled = 1
+		" Auto shrink the TOC, so that it won't take up 50% of the screen
+		let g:vim_markdown_toc_autofit = 1
+	" }}}
 	" Plugin: fatih/vim-go - {{{2
-		"#############################################################
-		"	GOLANG
-		"#############################################################
 		" Set gopath and gobin
 		let $GOPATH=getcwd()
 		let $GOBIN='/home/blb/go/bin'
@@ -164,9 +162,9 @@ let g:vim_markdown_toc_autofit = 1
 		" Set whether the JSON tags should be snakecase or camelcase.
 		let g:go_addtags_transform = "camelcase"
 	" }}}
-" Plugin: lervag/vimtex - {{{2
-let g:vimtex_view_method = 'zathura'
-" }}}
+	" Plugin: lervag/vimtex - {{{2
+		let g:vimtex_view_method = 'zathura'
+	" }}}
 " }}}
 " Abbreviations - {{{
 	inoreabbrev reutrn return
@@ -248,6 +246,21 @@ let g:vimtex_view_method = 'zathura'
 		" Enable spell checking for markdown files
 		autocmd FileType markdown setlocal spell spelllang=fr_FR
 	" }}}
+	" VIM - {{{2
+		autocmd FileType vim setlocal foldmethod=marker
+	" }}}
+" }}}
+" Function - {{{
+	" Toggle spell language - {{{2
+		function! ToggleSpellLang()
+			" toggle between en and fr
+			if &spelllang =~# 'en'
+				:set spelllang=fr
+			else
+				:set spelllang=en
+			endif
+		endfunction
+	" }}}
 " }}}
 " Mapping - {{{
 	" Bracket {{{2
@@ -263,25 +276,20 @@ let g:vimtex_view_method = 'zathura'
 	" }}}
 	" Moving - {{{2
 		" disable arrow keys in Escape mode
-		" nnoremap <up> <nop>
-		" nnoremap <down> <nop>
-		" nnoremap <left> <nop>
-		" nnoremap <right> <nop>
+		nnoremap <up> <nop>
+		nnoremap <down> <nop>
+		nnoremap <left> <nop>
+		nnoremap <right> <nop>
 		" disable arrow keys in Insert mode
-		" inoremap <up> <nop>
-		" inoremap <down> <nop>
-		" inoremap <left> <nop>
-		" inoremap <right> <nop>
+		inoremap <up> <nop>
+		inoremap <down> <nop>
+		inoremap <left> <nop>
+		inoremap <right> <nop>
 		" scroll on window
-		nnoremap <C-h> ^
-		nnoremap <C-l> $
-		nnoremap <C-k> {
-		nnoremap <C-j> }
-
-		nnoremap <C-Left> <C-w><left>
-		nnoremap <C-Right> <C-w><right>
-		nnoremap <C-Up> <C-w><up>
-		nnoremap <C-Down> <C-w><down>
+		nnoremap <C-h> <C-w><left>
+		nnoremap <C-l> <C-w><right>
+		nnoremap <C-k> <C-w><up>
+		nnoremap <C-j> <C-w><down>
 	" }}}
 	" Navigation - {{{2
 		" FZF - {{{3
@@ -309,6 +317,10 @@ let g:vimtex_view_method = 'zathura'
 		" Clear search highlights
 		nnoremap <leader>c :nohlsearch<cr>
 	" }}}
+	" Spelling - {{{2
+		nnoremap <F1> :setlocal spell!<CR> " toggle spell on or off
+		nnoremap <F2> :call ToggleSpellLang()<CR> " toggle language
+	" }}}
 	" Spliting - {{{2
 		nnoremap <leader>v :vsplit<cr>
 		nnoremap <leader>h :split<cr>
@@ -334,20 +346,20 @@ let g:vimtex_view_method = 'zathura'
 	" }}}
 " }}}
 " Theme - {{{
-" Nord - {{{2
-if exists('+termguicolors')
-	let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-	set termguicolors
-endif
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_italic_comments = 1
-let g:nord_comment_brightness = 20
-let g:nord_uniform_diff_background = 1
-let g:nord_cursor_line_number_background = 1
-colorscheme nord
-" }}}
+	" Nord - {{{2
+		if exists('+termguicolors')
+			let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+			let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+			set termguicolors
+		endif
+		let g:nord_italic = 1
+		let g:nord_underline = 1
+		let g:nord_italic_comments = 1
+		let g:nord_comment_brightness = 20
+		let g:nord_uniform_diff_background = 1
+		let g:nord_cursor_line_number_background = 1
+		colorscheme nord
+	" }}}
 " }}}
 
 
@@ -361,19 +373,3 @@ nnoremap <leader>f :find src/**/*<C-z><S-Tab>
 " Must be set at the end of vimrc
 hi! def		 goCoverageCovered	  ctermfg=cyan	guibg=#485962
 hi! def		 goCoverageUncover	  ctermfg=red	guibg=#8A515B
-
-
-" spell checking
-function! ToggleSpellLang()
-	" toggle between en and fr
-	if &spelllang =~# 'en'
-		:set spelllang=fr
-	else
-		:set spelllang=en
-	endif
-endfunction
-nnoremap <F1> :setlocal spell!<CR> " toggle spell on or off
-nnoremap <F2> :call ToggleSpellLang()<CR> " toggle language
-
-let g:python3_host_prog = '/usr/bin/python3'
-
