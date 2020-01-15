@@ -141,7 +141,7 @@ set $ws10 ""
 # Assignation des logiciels à un espace:
 for_window [class="Spotify"] move container to workspace ;workspace 
 for_window [class="Alacritty"] move container to workspace 1;workspace 1
-for_window [class="Firefox"] move container to workspace 2;workspace 2
+for_window [class="firefox"] move container to workspace 2;workspace 2
 for_window [class="Chromium"] move container to workspace 2;workspace 2
 for_window [class="Brave"] move container to workspace 2;workspace 2
 for_window [class="Opera"] move container to workspace 2;workspace 2

@@ -27,6 +27,7 @@
 	set autoread					  " reload file if the file changes on the disk
 	set autowrite					  " write when switching buffers
 	set autowriteall				  " write on :quit
+	set backspace=indent,eol,start	  " proper backspace behavior
 	set clipboard=unnamedplus
 	set completeopt-=preview		  " remove the horrendous preview window
 	set cursorline					  " highlight the current line for the cursor
@@ -59,16 +60,15 @@
 	set softtabstop=4					" Number of spaces that a <Tab> counts for while performing editing operations
 	set shiftwidth=4					" Number of spaces to use for each step of (auto)indent<Paste>
 	set noexpandtab						" Use tabs, not spaces
+	set wildmenu						" great command-line completion
 	%retab!								" Retabulate the whole file
-	syntax enable					  " Allow vim to set a custom font or color for a word
+	syntax on					  " Allow vim to set a custom font or color for a word
+	filetype plugin indent on
 	let mapleader = ','
 	let maplocalleader = 'ù'
 " }}}
 " Plugins - {{{
 	" Plugin: w0rp/ale - {{{2
-		"#############################################################
-		"	ALE
-		"#############################################################
 		let g:ale_sign_error = '⤫'
 		let g:ale_sign_warning = '⚠'
 		let g:ale_fix_on_save = 1
@@ -189,12 +189,6 @@ let g:vimtex_view_method = 'zathura'
 	" }}}
 " }}}
 " FileType- {{{
-	" Vimscript - {{{2
-		:augroup nvim
-		:	 autocmd!
-		:	 autocmd FileType vim setlocal foldmethod=marker
-		:augroup END
-	" }}}2
 	" GOLANG - {{{2
 		:augroup golang
 		:	autocmd!
@@ -381,4 +375,5 @@ endfunction
 nnoremap <F1> :setlocal spell!<CR> " toggle spell on or off
 nnoremap <F2> :call ToggleSpellLang()<CR> " toggle language
 
+let g:python3_host_prog = '/usr/bin/python3'
 
