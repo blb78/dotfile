@@ -35,32 +35,9 @@ export GOPATH=/usr/lib/go
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
-
-export CELLAR_ADDON_HOST=cellar.services.clever-cloud.com
-export CELLAR_ADDON_KEY_SECRET=Js7dwLUOS3TtOApedZga44ZuSqitIWZN49xusA==
-export CELLAR_ADDON_KEY_ID=2DIGCHF-DITYTZOS4LM8
-
-# plateform-manager
-export GL_PRIVATE_TOKEN=w63WmdUvoqn1FBSMRyXk
-export GL_GROUP_ID=3201404
-export CELLAR_HOST=cellar.services.clever-cloud.com
-export CELLAR_KEY=2DIGCHF-DITYTZOS4LM8
-export CELLAR_SECRET=Js7dwLUOS3TtOApedZga44ZuSqitIWZN49xusA==
-export CLEVER_CONSUMER_KEY=oR5lFOlaTDRVSaQL189lAH5qoJbTBt
-export CLEVER_CONSUMER_SECRET=OE2MoizvSVdFdmJ21hSnpHoSEhfyF9
-export CLEVER_TOKEN=eaaf15ae601340679e91fe71354a2302
-export CLEVER_SECRET=0cf1d514bf1e45f0a6c7cb1ce8c328a4
-export CLEVER_ORGANIZATION=orga_3ae718b0-8a4d-4c14-a49b-65f2b8bdfcd4
-
 # FOR POLYBAR CONFING
 export MONITOR=HDMI-0
 
 alias gwa='git worktree add'
 alias gwl='git worktree list'
 alias gwr='git worktree remove'
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-export NVIM_PYTHON_LOG_FILE=/tmp/log
-export NVIM_PYTHON_LOG_LEVEL=DEBUG
