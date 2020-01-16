@@ -285,7 +285,7 @@
 		inoremap <down> <nop>
 		inoremap <left> <nop>
 		inoremap <right> <nop>
-		" scroll on window
+		" moving on window
 		nnoremap <C-h> <C-w><left>
 		nnoremap <C-l> <C-w><right>
 		nnoremap <C-k> <C-w><up>
