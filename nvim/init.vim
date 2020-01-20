@@ -345,7 +345,7 @@
 		nnoremap N Nzzzv
 	" }}}
 " }}}
-" 9 -Theme - {{{
+" 9 - Theme - {{{
 	" Nord - {{{2
 		if exists('+termguicolors')
 			let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
