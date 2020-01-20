@@ -1,4 +1,4 @@
-" Dependencies - {{{
+" 1 - Dependencies - {{{
 	call plug#begin('~/.local/share/nvim/plugged')
 	" General
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " asynchronous completion
@@ -22,7 +22,7 @@
 	Plug 'blb78/nord-vim'
 	call plug#end()
 " }}}
-" Basic settings - {{{
+" 2 - Basic settings - {{{
 	set autoindent					  " take indent for new line from previous line
 	set autoread					  " reload file if the file changes on the disk
 	set autowrite					  " write when switching buffers
@@ -68,7 +68,7 @@
 	let maplocalleader = 'ù'
 	let g:python3_host_prog = '/usr/bin/python3'
 " }}}
-" Plugins - {{{
+" 3 - Plugins - {{{
 	" Plugin: dense-analysis/ale - {{{2
 		let g:ale_sign_error = '⤫'
 		let g:ale_sign_warning = '⚠'
@@ -166,12 +166,12 @@
 		let g:vimtex_view_method = 'zathura'
 	" }}}
 " }}}
-" Abbreviations - {{{
+" 4 - Abbreviations - {{{
 	inoreabbrev reutrn return
 	inoreabbrev retun return
 	inoreabbrev rt return
 " }}}
-" Buffer Events - {{{
+" 5 - Buffer Events - {{{
 	" Basic - {{{2
 		:augroup cleanFile
 		:	" save on leaving
@@ -186,7 +186,7 @@
 		:augroup END
 	" }}}
 " }}}
-" FileType- {{{
+" 6 - FileType- {{{
 	" GOLANG - {{{2
 		:augroup golang
 		:	autocmd!
@@ -250,7 +250,7 @@
 		autocmd FileType vim setlocal foldmethod=marker
 	" }}}
 " }}}
-" Function - {{{
+" 7 - Function - {{{
 	" Toggle spell language - {{{2
 		function! ToggleSpellLang()
 			" toggle between en and fr
@@ -262,7 +262,7 @@
 		endfunction
 	" }}}
 " }}}
-" Mapping - {{{
+" 8 - Mapping - {{{
 	" Bracket {{{2
 		inoremap { {}<Left>
 		inoremap (( ()
@@ -345,7 +345,7 @@
 		nnoremap N Nzzzv
 	" }}}
 " }}}
-" Theme - {{{
+" 9 -Theme - {{{
 	" Nord - {{{2
 		if exists('+termguicolors')
 			let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
