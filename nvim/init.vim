@@ -120,12 +120,9 @@
 		let g:vim_markdown_toc_autofit = 1
 	" }}}
 	" Plugin: fatih/vim-go - {{{2
-		" Set gopath and gobin
 		let $GOPATH=getcwd()
 		let $GOBIN='/home/blb/go/bin'
-		" Run goimports when running gofmt
 		let g:go_fmt_command = "goimports"
-		" Enable syntax highlighting per default
 		let g:go_highlight_types = 1
 		let g:go_highlight_fields = 1
 		let g:go_highlight_functions = 1
@@ -134,32 +131,17 @@
 		let g:go_highlight_operators = 1
 		let g:go_highlight_build_constraints = 1
 		let g:go_highlight_extra_types = 1
-		" Show the progress when running :GoCoverage
 		let g:go_echo_command_info = 1
-		" Show type information
-		" let g:go_auto_type_info = 1
-		" Highlight variable uses
-		" let g:go_auto_sameids = 1
-		" Fix for location list when vim-go is used together with Syntastic
 		let g:go_list_type = "quickfix"
-		" Add the failing test name to the output of :GoTest
 		let g:go_test_show_name = 1
-		" gometalinter configuration
-		let g:go_metalinter_command = "golangci-lint"
-		let g:go_metalinter_deadline = "5s"
-		let g:go_metalinter_enabled = [
-					\ 'deadcode',
-					\ 'errcheck',
-					\ 'gosimple',
-					\ 'golint',
-					\ 'ineffassign',
-					\ 'govet',
-					\ 'unused',
-					\ 'staticcheck',
-					\ 'structcheck',
-					\ 'vetshadow'
-					\]
-		" Set whether the JSON tags should be snakecase or camelcase.
+		let g:ale_linters = {'go': ['golangci-lint']}
+		let g:ale_go_golangci_lint_executable = '/home/kriyss/go/bin/golangci-lint'
+		let g:ale_go_golangci_lint_options = '--fast  --out-format=tab'
+		let g:ale_lint_on_text_changed = 0
+		let g:ale_lint_on_enter = 1
+		let g:ale_lint_on_save = 1
+		let g:ale_sign_error = '⤫'
+		let g:ale_sign_warning = '⚠'
 		let g:go_addtags_transform = "camelcase"
 	" }}}
 	" Plugin: lervag/vimtex - {{{2
