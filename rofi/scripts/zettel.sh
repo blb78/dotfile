@@ -24,7 +24,7 @@ function main()
 			tmux new-window -n "zettel"
 			tmux send-keys "nvim ${WIKI_DIR}/${note}" C-m
 		else
-			local now="$(date +'%y-%m-%d-%H%M')"
+			local now="$(date +'%Y-%m-%d-%H%M')"
 			local filename="${WIKI_DIR}/${now}-${note}.md"
 			tmux new-window -n "zettel"
 			tmux send-keys "nvim ${filename}" C-m
