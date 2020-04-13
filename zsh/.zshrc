@@ -28,6 +28,11 @@ source $ZSH/oh-my-zsh.sh
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+    --color=fg:#e5e9f0,bg:#3b4251,hl:#81a1c1
+    --color=fg+:#e5e9f0,bg+:#3b4251,hl+:#81a1c1
+    --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
+    --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b'
 # export FZF_DEFAULT_OPTS=" --ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 export GOPATH=/usr/lib/go
 # alias tmux='tmux -2'

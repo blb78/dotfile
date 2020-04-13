@@ -62,6 +62,7 @@ bindsym $mod+l exec --no-startup-id ~/.config/rofi/scripts/i3layoutmenu.sh
 bindsym $mod+n exec --no-startup-id ~/.config/rofi/scripts/networkmenu.py
 bindsym $mod+m exec --no-startup-id ~/.config/rofi/scripts/displayscreen.sh
 bindsym $mod+a exec --no-startup-id ~/.config/rofi/scripts/audiomenu.sh
+bindsym $mod+z exec --no-startup-id ~/.config/rofi/scripts/zettel.sh
 # bindsym $mod+p exec ~/.config/rofi/SYSTEM
 # bindsym $mod+n exec ~/.config/rofi/NETWORK
 # bindsym $mod+m exec ~/.config/rofi/MONITOR
