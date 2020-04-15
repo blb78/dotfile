@@ -4,7 +4,7 @@
 @import "shared/settings.rasi"
 
 * {
-  accent:           @nord13;
+  accent:           @nord12;
   background:       @nord0;
   background-light: @nord1;
   background-focus: @nord2;

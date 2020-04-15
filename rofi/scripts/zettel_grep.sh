@@ -11,13 +11,13 @@ fi
 function get_notes()
 {
 	cd ${WIKI_DIR}
-	rg -l -tmd ""
+	rg -n -tmd ""
 }
 
 function main()
 {
 	local all_notes="$(get_notes)"
-	local note=$( (echo "${all_notes}")| rofi -dmenu -i -matching fuzzy -sorting-method fzf -sort -theme themes/zettelmenu.rasi -p "Note")
+	local note=$( (echo "${all_notes}")| rofi -dmenu -i -matching fuzzy -sorting-method fzf -sort -theme themes/zettel_grep_menu.rasi -p "Note")
 	if [[ -n "${note}" ]]; then
 		local matching=$( (echo "${all_notes}") | rg -l "^${note}$")
 		if [[ -n "${matching}" ]]; then
