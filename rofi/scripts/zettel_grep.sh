@@ -11,7 +11,7 @@ fi
 function get_notes()
 {
 	cd ${WIKI_DIR}
-	rg -n -tmd ""
+	rg -n -tmd "^#."
 }
 
 function main()
@@ -19,7 +19,8 @@ function main()
 	local all_notes="$(get_notes)"
 	local note=$( (echo "${all_notes}")| rofi -dmenu -i -matching fuzzy -sorting-method fzf -sort -theme themes/zettel_grep_menu.rasi -p "Note")
 	if [[ -n "${note}" ]]; then
-		local matching=$( (echo "${all_notes}") | rg -l "^${note}$")
+		local matching=$( (echo "${all_notes}") | rg -n "^${note}$")
+		note=`echo $note | cut -d':' -f 1`
 		if [[ -n "${matching}" ]]; then
 			tmux new-window -n "zettel"
 			tmux send-keys "nvim --cmd 'set autochdir' '${WIKI_DIR}/${note}'" C-m

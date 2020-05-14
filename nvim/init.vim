@@ -1,25 +1,29 @@
-" 1 - Dependencies - {{{
+"1 - Dependencies - {{{
 	call plug#begin('~/.local/share/nvim/plugged')
 	" General
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " asynchronous completion
-	Plug 'zchee/deoplete-go'						" Asynchronous GO completion
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
-	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-	Plug 'junegunn/fzf.vim'
-	Plug 'takac/vim-hardtime'
-	" Language support
-	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go support
-	Plug 'leafgarland/typescript-vim'				" TypeScript syntax highlighting
-	Plug 'pangloss/vim-javascript'					" JavaScript syntax highlighting
-	Plug 'lervag/vimtex'							" LaTeX support
-	Plug 'plasticboy/vim-markdown'					" Markdown syntax highlighting
-	Plug 'storyn26383/vim-vue'						" Vuejs syntax highlighting
+		Plug 'vim-airline/vim-airline'
+		Plug 'vim-airline/vim-airline-themes'
+		Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+		Plug 'junegunn/fzf.vim'
+		Plug 'junegunn/goyo.vim'
+		Plug 'blb78/limelight.vim'
+		Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+		Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+		Plug 'vimwiki/vimwiki'
 	" Linting code
-	Plug 'dense-analysis/ale'
-	Plug 'eslint/eslint' , { 'do': 'yarn install' }
+		Plug 'dense-analysis/ale'
+		Plug 'eslint/eslint' , { 'do': 'yarn install' }
+	" Snippets
+		Plug 'SirVer/ultisnips'
+		Plug 'honza/vim-snippets'
+	" Language support
+		Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go support
+		Plug 'leafgarland/typescript-vim'				" TypeScript syntax highlighting
+		Plug 'pangloss/vim-javascript'					" JavaScript syntax highlighting
+		Plug 'plasticboy/vim-markdown'					" Markdown syntax highlighting
+		Plug 'storyn26383/vim-vue'						" Vuejs syntax highlighting
 	" Theme
-	Plug 'blb78/nord-vim'
+		Plug 'blb78/nord-vim'
 	call plug#end()
 " }}}
 " 2 - Basic settings - {{{
@@ -66,7 +70,6 @@
 	filetype plugin indent on
 	let mapleader = ','
 	let maplocalleader = 'ù'
-	let g:python3_host_prog = '/usr/bin/python3'
 " }}}
 " 3 - Plugins - {{{
 	" Plugin: dense-analysis/ale - {{{2
@@ -80,6 +83,7 @@
 					\	'scss': ['prettier'],
 					\	'json': ['prettier'],
 					\	'yaml': ['prettier'],
+					\	'markdown': ['prettier'],
 					\	'graphql': ['prettier'],
 					\	'latex': ['proselint'],
 					\	'go': ['golangci-lint'],
@@ -95,22 +99,32 @@
 		let g:airline#extensions#ale#enabled = 1
 	" }}}
 	" Plugin: shougo/deoplete.vim - {{{2
-		if has('nvim')
-			" Enable deoplete on startup
-			let g:deoplete#enable_at_startup = 1
-		endif
-		" Disable deoplete when in multi cursor mode
-		function! Multiple_cursors_before()
-			let b:deoplete_disable_auto_complete = 1
-		endfunction
-		function! Multiple_cursors_after()
-			let b:deoplete_disable_auto_complete = 0
-		endfunction
+		let g:deoplete#enable_at_startup = 1
 		let g:deoplete#sources#go#gocode_binary = '/home/blb/go/bin/gocode'
-		" }}}
-	" Plugin: junegunn/fzf.vim - {{{2
-		let g:fzf_layout = { 'down': '~100%' }
 	" }}}
+	" Plugin: SirVer/ultisnips - {{{2
+		let g:UltiSnipsExpandTrigger="<tab>"
+		let g:UltiSnipsJumpForwardTrigger="<c-b>"
+		let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+		" let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
+	" }}}
+	" Plugin: junegunn/fzf.vim - {{{2
+		nnoremap - :FZF<cr>
+		" let g:fzf_layout = { 'down': '~100%' }
+	" }}}
+	" Plugin: junegunn/goyo.vim - {{{2
+		let g:goyo_width = 100
+	" }}}
+	" Plugin: junegunn/limelight.vim - {{{2
+		let g:limelight_focus_mode = 1
+	" }}}
+
+	" Plugin: mbbill/undotree - {{{2
+		" using relative positioning instead
+		" let g:undotree_CustomUndotreeCmd = 'vertical 32 new'
+		" let g:undotree_CustomDiffpanelCmd= 'belowright 12 new'
+	" }}}
+
 	" Plugin: vim-airline/vim-airline - {{{2
 		" Disable showing tabs in the tabline. This will ensure that the buffers are
 		" what is shown in the tabline at all times.
@@ -123,6 +137,15 @@
 		let g:vim_markdown_folding_disabled = 1
 		" Auto shrink the TOC, so that it won't take up 50% of the screen
 		let g:vim_markdown_toc_autofit = 1
+		let g:vim_markdown_conceal = 2
+		let g:vim_markdown_conceal_code_blocks = 0
+		let g:vim_markdown_math = 1
+		let g:vim_markdown_toml_frontmatter = 1
+		let g:vim_markdown_frontmatter = 1
+		let g:vim_markdown_strikethrough = 1
+		let g:vim_markdown_autowrite = 1
+		let g:vim_markdown_edit_url_in = 'tab'
+		let g:vim_markdown_follow_anchor = 1
 	" }}}
 	" Plugin: fatih/vim-go - {{{2
 		let $GOPATH=getcwd()
@@ -141,29 +164,28 @@
 		let g:go_test_show_name = 1
 		let g:go_addtags_transform = "camelcase"
 	" }}}
-	" Plugin: lervag/vimtex - {{{2
-		let g:vimtex_view_method = 'zathura'
-	" }}}
 " }}}
 " 4 - Abbreviations - {{{
 	inoreabbrev reutrn return
+	inoreabbrev retrun return
 	inoreabbrev retun return
 	inoreabbrev rt return
 " }}}
 " 5 - Buffer Events - {{{
-	" Basic - {{{2
-		:augroup cleanFile
-		:	" save on leaving
-		:	autocmd BufLeave * silent! :wa
-		:	" remove whitespace
-		:	autocmd BufWritePre * :%s/\s\+$//e
-		:augroup END
-		:augroup numberColorToggle
-		:	autocmd!
-		:	autocmd InsertEnter * highlight LineNr ctermbg=green guifg=#A3BE8C
-		:	autocmd InsertLeave * highlight LineNr ctermbg=black guifg=#4C566A
-		:augroup END
-	" }}}
+	:augroup cleanFile
+	:	" save on leaving
+	:	autocmd BufLeave * silent! :wa
+	:	" remove whitespace
+	:	autocmd BufWritePre * :%s/\s\+$//e
+	:augroup END
+	:augroup numberColorToggle
+	:	autocmd!
+	:	autocmd InsertEnter * highlight LineNr ctermbg=green guifg=#A3BE8C
+	:	autocmd InsertLeave * highlight LineNr ctermbg=black guifg=#4C566A
+	:augroup END
+	:augroup zettel
+	:	autocmd VimEnter * call StartUp()
+	:augroup END
 " }}}
 " 6 - FileType- {{{
 	" GOLANG - {{{2
@@ -185,32 +207,7 @@
 		:	autocmd FileType go nmap <leader>gdh <Plug>(go-def-split)
 		:	autocmd FileType go nmap <leader>gD <Plug>(go-doc)
 		:	autocmd FileType go nmap <leader>gDv <Plug>(go-doc-vertical)
-		:	autocmd FileType go nnoremap <localleader>a 'Azz
-		:	autocmd FileType go nnoremap <localleader>b 'Bzz
-		:	autocmd FileType go nnoremap <localleader>c 'Czz
-		:	autocmd FileType go nnoremap <localleader>d 'Dzz
-		:	autocmd FileType go nnoremap <localleader>e 'Ezz
-		:	autocmd FileType go nnoremap <localleader>f 'Fzz
-		:	autocmd FileType go nnoremap <localleader>g 'Gzz
-		:	autocmd FileType go nnoremap <localleader>h 'Hzz
-		:	autocmd FileType go nnoremap <localleader>i 'Izz
-		:	autocmd FileType go nnoremap <localleader>j 'Jzz
-		:	autocmd FileType go nnoremap <localleader>k 'Kzz
-		:	autocmd FileType go nnoremap <localleader>l 'Lzz
-		:	autocmd FileType go nnoremap <localleader>m 'Mzz
-		:	autocmd FileType go nnoremap <localleader>n 'Nzz
-		:	autocmd FileType go nnoremap <localleader>o 'Ozz
-		:	autocmd FileType go nnoremap <localleader>p 'Pzz
-		:	autocmd FileType go nnoremap <localleader>q 'Qzz
-		:	autocmd FileType go nnoremap <localleader>r 'Rzz
-		:	autocmd FileType go nnoremap <localleader>s 'Szz
-		:	autocmd FileType go nnoremap <localleader>t 'Tzz
-		:	autocmd FileType go nnoremap <localleader>u 'Uzz
-		:	autocmd FileType go nnoremap <localleader>v 'Vzz
-		:	autocmd FileType go nnoremap <localleader>w 'Wzz
-		:	autocmd FileType go nnoremap <localleader>x 'Xzz
-		:	autocmd FileType go nnoremap <localleader>y 'Yzz
-		:	autocmd FileType go nnoremap <localleader>z 'Zzz
+		:	autocmd FileType go nnoremap <localleader>l :Limelight<CR>
 		:augroup END
 	" }}}2
 	" LaTeX - {{{2
@@ -224,6 +221,30 @@
 	" Markdown - {{{2
 		" Enable spell checking for markdown files
 		autocmd FileType markdown setlocal spell spelllang=fr_FR
+		autocmd FileType markdown setlocal wrap linebreak nolist
+		autocmd FileType markdown nnoremap <F1> :setlocal spell!<CR> " toggle spell on or off
+		autocmd FileType markdown nnoremap <F2> :call ToggleSpellLang()<CR> " toggle language
+		autocmd FileType markdown Goyo 100
+		autocmd FileType markdown Limelight 0.7
+		autocmd FileType markdown nnoremap <silent> <Down> gj
+		autocmd FileType markdown nnoremap <silent> <Up> gk
+		autocmd FileType markdown nnoremap <silent> <Up> gk
+		autocmd FileType markdown nnoremap <silent> <home> g<home>
+		autocmd FileType markdown nnoremap <silent> <End> g<End>
+		autocmd FileType markdown inoremap <c-i> <esc>:call local#zettel#link("",0)<CR>
+		autocmd FileType markdown nnoremap <localleader>i <esc>:call local#zettel#link("",0)<CR>
+		autocmd FileType markdown nnoremap <localleader>o viwy <esc>:call local#zettel#open('<C-R>"')<CR>
+		autocmd FileType markdown nnoremap <localleader>p viwy <esc>:call local#zettel#preview('<C-R>"',0)<CR>
+		autocmd FileType markdown nnoremap <localleader>g :Goyo<CR>
+		autocmd FileType markdown nnoremap <localleader>l :Limelight<CR>
+		autocmd FileType markdown nnoremap <localleader>& m`^i# <esc>``2l
+		autocmd FileType markdown nnoremap <localleader>é m`^i## <esc>``3l
+		autocmd FileType markdown nnoremap <localleader>" m`^i### <esc>``4l
+		autocmd FileType markdown nnoremap <localleader>' m`^i#### <esc>``5l
+		autocmd FileType markdown nnoremap <localleader>( m`^i##### <esc>``6l
+		autocmd FileType markdown nnoremap <localleader>è ciw``<ESC>P2l
+		autocmd FileType markdown nnoremap <localleader>_ ciw__<ESC>P2l
+		autocmd FileType markdown nnoremap <localleader>* ciw****<ESC>hP3l
 	" }}}
 	" VIM - {{{2
 		autocmd FileType vim setlocal foldmethod=marker
@@ -237,6 +258,13 @@
 				:set spelllang=fr
 			else
 				:set spelllang=en
+			endif
+		endfunction
+	" }}}
+	" Run FZF - {{{2
+		function! StartUp()
+			if 0 == argc()
+				FZF!
 			endif
 		endfunction
 	" }}}
@@ -270,19 +298,10 @@
 		nnoremap <C-k> <C-w><up>
 		nnoremap <C-j> <C-w><down>
 	" }}}
-	" Navigation - {{{2
-		" FZF - {{{3
-			nnoremap - :FZF<cr>
-		" }}}
-	" }}}
 	" Opening - {{{2
 		" opening init.vim
-		nnoremap <localleader><leader> :e $MYVIMRC<cr>
-	" }}}
-	" Removing - {{{2
-		" delete line in Insert mode
-		inoremap <C-d> <esc>ddi
-	" }}}
+			nnoremap <localleader><leader> :e $MYVIMRC<cr>
+		" }}}
 	" Resizing - {{{2
 		" Disable arrow movement, resize splits instead.
 		" nnoremap <Up>	 :resize +2<CR>
@@ -296,25 +315,10 @@
 		" Clear search highlights
 		nnoremap <leader>c :nohlsearch<cr>
 	" }}}
-	" Spelling - {{{2
-		nnoremap <F1> :setlocal spell!<CR> " toggle spell on or off
-		nnoremap <F2> :call ToggleSpellLang()<CR> " toggle language
-	" }}}
 	" Spliting - {{{2
 		nnoremap <leader>v :vsplit<cr>
 		nnoremap <leader>h :split<cr>
 		nnoremap <leader>q :close<cr>
-	" }}}
-	" Surrounding - {{{2
-		" a word by \""
-		nnoremap <leader>" ciw""<ESC>Pl
-		" celui la ne fonctionne pas :-(
-		"nnoremap <localleader>'ciw''<ESC>Pl
-		" a selection
-		vnoremap <leader>" c""<ESC>Pl
-		vnoremap <leader>= c{}<ESC>Pl
-		" celui la ne fonctionne pas :-(
-		"vnoremap <localleader>' c''<ESC>Pl
 	" }}}
 	" Unclassified - {{{2
 		" Center the screen quickly
@@ -341,12 +345,40 @@
 	" }}}
 " }}}
 
+function! s:goyo_enter()
+	if executable('tmux') && strlen($TMUX)
+		silent !tmux set status off
+		silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+	endif
+	set noshowmode
+	set noshowcmd
+	set scrolloff=999
+	let b:quitting = 0
+	let b:quitting_bang = 0
+	autocmd QuitPre <buffer> let b:quitting = 1
+	cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
 
-set path-=.,,
-set wildignore+=*/bin/*,*/github.com/*,*/gitlab.com/*,*/clevercloud/*,*/pkg/*,*/golang.org/*,*/gopkg.in/*
-set wildcharm=<C-z>
-nnoremap <leader>e :vsplit src/**/*<C-z><S-Tab>
-nnoremap <leader>f :find src/**/*<C-z><S-Tab>
+function! s:goyo_leave()
+	if executable('tmux') && strlen($TMUX)
+		silent !tmux set status on
+		silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+	endif
+	set showmode
+	set showcmd
+	set scrolloff=5
+	" Quit Vim if this is the only remaining buffer
+	if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+		if b:quitting_bang
+			qa!
+		else
+			qa
+		endif
+	endif
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Change test coverage color
 " Must be set at the end of vimrc
