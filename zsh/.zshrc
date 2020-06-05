@@ -29,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+    --reverse
     --color=fg:#e5e9f0,bg:#3b4251,hl:#81a1c1
     --color=fg+:#e5e9f0,bg+:#3b4251,hl+:#81a1c1
     --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
@@ -42,7 +43,6 @@ export GOPATH=/usr/lib/go
 [[ -z "$TMUX" ]] && exec tmux
 # FOR POLYBAR CONFING
 export MONITOR=HDMI-0
-
-alias gwa='git worktree add'
-alias gwl='git worktree list'
-alias gwr='git worktree remove'
+export WIKI="/home/blb/wiki"
+# nix package manager
+. /home/blb/.nix-profile/etc/profile.d/nix.sh
