@@ -46,3 +46,6 @@ export MONITOR=HDMI-0
 export WIKI="/home/blb/wiki"
 # nix package manager
 . /home/blb/.nix-profile/etc/profile.d/nix.sh
+alias gwa='git worktree add'
+alias gwl='git worktree list'
+alias gwr='git worktree remove'
