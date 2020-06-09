@@ -2,7 +2,7 @@
 set -u
 set -e
 
-readonly WIKI_DIR=~/wiki
+readonly WIKI_DIR=`echo ${WIKI}`
 
 if [[ ! -a "${WIKI_DIR}" ]]; then
 	echo "empty" >> "${WIKI_DIR}"
